@@ -29,6 +29,9 @@ npm start
 ## **camelCase**
 - Metodos
 
+## Ramas
+[Numero del issue]-[Descripción corta]
+
 # Organización
 En client/src se tienen las siguientes carpetas:
 - Assets  => Para guardar los siguientes datos
