@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {get} from '../hooks/Hooks'
-function Home(){
 
+function Home(){
     useEffect(() => {
         apiTEST();
       }, [])
