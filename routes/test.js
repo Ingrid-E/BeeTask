@@ -3,8 +3,9 @@ var router = express.Router();
 const pool = require("../db");
 /* GET users listing. Prueba de escritorio*/
 router.get("/", async (req, res) => {
+  console.log("GET TESTS");
   try {
-    const response = await pool.query(`SELECT * FROM users`);
+    const response = await pool.query(`SELECT * FROM test`);
     return res.status(200).json(response.rows);
   } catch (error) {
     console.log(error)

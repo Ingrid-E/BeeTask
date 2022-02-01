@@ -8,6 +8,9 @@ const devConfig = {
   port: process.env.PG_PORT,
   password: process.env.PG_PASSWORD,
   database: process.env.PG_DATABASE,
+  ssl: {
+    rejectUnauthorized: false,
+  }
 };
 
 const proConfig = {

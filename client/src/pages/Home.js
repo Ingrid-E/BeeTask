@@ -8,7 +8,7 @@ function Home(){
 
     async function apiTEST() {
         try {
-          const response =await get(`/users/`)
+          const response =await get(`test`)
           console.log(response)
         } catch (error) {
           console.error("Not working");

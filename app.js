@@ -16,10 +16,11 @@ if(process.env.NODE_ENV === "production"){
 
 //Archivo que contiene el código api de las rutas
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const testRouter = require('./routes/test');
 const cookieParser = require('cookie-parser');
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/test', testRouter);
 
 app.listen(PORT, ()=>{
   console.log(`Server is starting on port ${PORT}`);
