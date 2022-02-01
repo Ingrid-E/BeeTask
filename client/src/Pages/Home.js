@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {get} from '../hooks/Hooks'
 function Home(){
-    apiTEST();
+
+    useEffect(() => {
+        apiTEST();
+      }, [])
+
     async function apiTEST() {
         try {
           const response =await get(`/users/`)
