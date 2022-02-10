@@ -1,3 +1,6 @@
+const dir = 'http://localhost:5000/'
+
+
 export async function get(endpoint) {
   const response = await fetch(endpoint, {
     method: "GET",
@@ -15,21 +18,24 @@ export async function get(endpoint) {
 }
 
 export async function post(endpoint, data) {
-  const response = await fetch(endpoint, {
+  const response = await fetch(dir+endpoint, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  });
+  }); console.log("ab23: ", response);
   if (!response.ok) {
     // make the promise be rejected if we didn't get a 2xx response
     const err = new Error("Not 2xx response");
     err.response = response;
-    throw err;
+    const errorData = await err.response.json();
+    //console.log("errorhandler: ", nidea);
+    throw errorData;
   } else {
-    return await response.json();
+    const responseData =  await response.json();
+    return responseData;
   }
 }
 
