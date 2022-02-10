@@ -62,6 +62,7 @@ function Register(){
             console.log("Los apellidos solo pueden llevar letras y no puedes tener mas de 3 apellidos, ejemplo: Orwell Huxley")
         }else{
             registerUser();
+            navigate("/login")
         }
  
     }

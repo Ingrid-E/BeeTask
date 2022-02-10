@@ -16,7 +16,7 @@ function Home(){
       }
     return (
         <div className="Home">
-            <h1>HOLA GEYS</h1>
+            <h1>Menu aplicacion</h1>
         </div>
     )
 }
