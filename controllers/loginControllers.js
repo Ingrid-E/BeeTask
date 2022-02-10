@@ -3,9 +3,9 @@ const bcrypt = require("bcryptjs");
 
 const registerUser = async(req, res, next)=>{
     try {
-    const {email, password, names, surnames, telephone} = req.body;
+    const {email, password, names, surnames} = req.body;
     const hash = await bcrypt.hash(password, 8);
-    await pool.query("INSERT INTO USERS (email, password, names, surnames, telephone) VALUES ($1, $2, $3, $4, $5)", [email, hash, names, surnames, telephone]);
+    await pool.query("INSERT INTO USERS (email, password, names, surnames) VALUES ($1, $2, $3, $4)", [email, hash, names, surnames]);
     res.status(200).json("User created");
     } catch (error) {
      next(error);   
