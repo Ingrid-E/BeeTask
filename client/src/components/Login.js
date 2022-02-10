@@ -11,8 +11,7 @@ function Login(){
 
 
       useEffect(()=>{
-    
-      
+
         },[user])
 
       const handleChange = async (e) =>{

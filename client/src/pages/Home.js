@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import NavBar from "../components/NavBar";
 import {get} from '../hooks/Hooks'
 
 function Home(){
@@ -16,7 +17,7 @@ function Home(){
       }
     return (
         <div className="Home">
-            <h1>HOLA GEYS</h1>
+            <NavBar/>
         </div>
     )
 }
