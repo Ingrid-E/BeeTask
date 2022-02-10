@@ -23,9 +23,9 @@ function Register(){
         setUser({...user, [e.target.name]:e.target.value} )
     };
     const expression = {
-        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!_|¬°{}\-><¿%*^#?&])[A-Za-z\d@$!_|¬°{}\-><¿%*^#?&]{5,30}/gm,
-        name: /^[a-zA-Z]{2,32}(([ ][a-zA-Z]{2,32}){1,2})?$/gm,
-        email: /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$/gm
+        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!_|¬°{}\-><¿%*^#?&])[A-Za-z\d@$!_|¬°{}\-><¿%*^#?&]{5,30}/,
+        name: /^[a-zA-Z]{2,32}(([ ][a-zA-Z]{2,32}){1,2})?$/,
+        email: /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$/
         };
     const validateFormData = (data, dataType)=>{
         switch(dataType){
