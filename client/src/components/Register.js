@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect  } from 'react';
 import {useNavigate} from "react-router-dom";
+import { post } from "../hooks/Hooks";
 
 
 function Register(){
@@ -21,40 +22,47 @@ function Register(){
       const handleChange = async (e) =>{
         setUser({...user, [e.target.name]:e.target.value} )
     };
-
-    const validatePassword = (aPassword)=>{
-        const expression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!_|¬°{}\-><¿%*^#?&])[A-Za-z\d@$!_|¬°{}\-><¿%*^#?&]{5,30}/;
-        if(expression.test(aPassword)){
-            return true;
+    const expression = {
+        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!_|¬°{}\-><¿%*^#?&])[A-Za-z\d@$!_|¬°{}\-><¿%*^#?&]{5,30}/gm,
+        name: /^[a-zA-Z]{2,32}(([ ][a-zA-Z]{2,32}){1,2})?$/gm,
+        email: /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$/gm
+        };
+    const validateFormData = (data, dataType)=>{
+        switch(dataType){
+            case 'email': return expression.email.test(data);
+            break;
+            case 'password': return expression.password.test(data);
+            break;
+            case 'name': return expression.name.test(data);
+            break;
+            default: return false;
+            break;
         }
+       
+    }
 
-        return false;
+    const registerUser = async ()=>{
+        try{
+          const resData = await post('register', user);
+          console.log(resData);
+        }catch(error){
+          console.log("Error en la BD: ",error.message);
+        }
     }
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        if(!validatePassword(user.password)){
-            console.log("La contraseña debe tener entre 5 y 30 caracteres, debe incluir numeros, caracteres especiales y mayusculas.")
+        if(!validateFormData(user.email, 'email')){
+            console.log("Inserte un email valido. Ejemplo: anonymus@gmail.com")
+        }else if(!validateFormData(user.password, 'password')){
+            console.log("Las contraseñas deben tener al menos 5 caracteres, incluir mayusculas, numeros y caracteres especiales.")
+        }else if(!validateFormData(user.names, 'name')){
+            console.log("Los nombres solo pueden llevar letras y no puedes tener mas de 3 nombres, ejemplo: Carla Martina")
+        }else if(!validateFormData(user.surnames, 'name')){
+            console.log("Los apellidos solo pueden llevar letras y no puedes tener mas de 3 apellidos, ejemplo: Orwell Huxley")
         }else{
-            const res = await fetch("http://localhost:5000/register",{
-            method: "POST",
-            body: JSON.stringify(user),
-            headers: {"Content-Type": "application/json"}
-        });
-        const resData = await res.json();
-        if(resData.message === 'new row for relation "users" violates check constraint "valid_names"'){
-            console.log("Debe escribir sus dos primeros nombres sin usar numeros ni caracteres especiales, ejemplo: Camila Mamasota")
-        }else if(resData.message === 'new row for relation "users" violates check constraint "valid_email"'){
-            console.log("Escriba un email valido por favor, ejemplo: pabloescobar@hornymail.com");
-        }else if(resData.message === 'new row for relation "users" violates check constraint "valid_surnames"'){
-            console.log("Debe escribir sus dos primeros apellidos sin usar numeros ni caracteres especiales, ejemplo: Aguilar Gutierrez")
-        }else{
-            navigate("/login");
-
+            registerUser();
         }
-        }
-            
-    
  
     }
 

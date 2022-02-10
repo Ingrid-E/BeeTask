@@ -18,8 +18,7 @@ if(process.env.NODE_ENV === "production"){
 app.use(require("./routes/loginRoutes"));
 //manejador de errores
 app.use((err,req,res,next)=>{
-  console.log("keonda rasaaaaaaa");
-  res.json({message: err.message});
+  res.status(406).json({message: err.message});
 })
 
 const cookieParser = require('cookie-parser');
