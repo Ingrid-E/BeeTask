@@ -4,6 +4,10 @@
     padding: 0;
     font-family: 'Quicksand', sans-serif;
 }
+
+.home {
+    position: absolute; width: 100%; overflow-x: hidden
+}
 :root {
     --main-color: #FEE69F;
 }
@@ -46,38 +50,64 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100vw;
     height: 91vh;
     margin: 0 0;
     background-color: var(--main-color);
 }
 
+.home__section2-background {
+    position: absolute;
+}
+
 .hex {
     position:relative;
-    min-width: 15rem;
-    height: 15rem;
+    min-width: 40vh;
+    height: 40vh;
     background-image: url('../assets/Images/Hexagono.png');
     background-size:cover;
+    z-index: 1;
 }
 .hex-left {
-    position: relative;
-    left: -10vw;
-    top: 25%;
+    left: 50vw;
+    top: -5vh;
 }
 
 .hex-right {
-    position: relative;
-    left: 10vw;
-    top: -25%;
+    left: -50vw;
+    top: 5vh;
 }
+
+.bee{
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    background-image: url('../assets/Images/Bee.png');
+    background-size: contain;
+    z-index: 2;
+}
+
+.bee-top {
+    top: -5vh;
+    left: 40vw;
+
+}
+
+.bee-down {
+    top: 50vh;
+    left: -25vw;
+    background-image: url('../assets/Images/Bee-rotated.png');
+}
+
 
 .home__section2-text {
     display: flex;
     text-align: center;
-    width: 100%;
+    width: 70%;
     justify-content: space-between;
-    height:45vh;
+    height:50vh;
+    z-index: 3;
 }
 
 .text-float {
@@ -85,7 +115,7 @@
 }
 
 .text-float h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-bottom: 1rem;
 }
 
@@ -101,7 +131,31 @@
     align-self:flex-end;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+    .bee-top {
+        left: 53vw;
+    }
+    .bee-down {
+        left: -15vw;
+    }
+
+    .text-float h1 {
+        font-size: 2em;
+    }
+
+    .text-float p {
+        font-size: 1.2em;
+    }
+
+    .home__section2-text {
+        flex-direction: column;
+        height:auto;
+    }
+
+    .text-float:nth-child(n) {
+        margin: 1em 0;
+        align-self:center;
+    }
 
     .home__start-text {
         transform: scaleX(-1);

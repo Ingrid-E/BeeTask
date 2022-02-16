@@ -16,7 +16,6 @@ function Home(){
             </div>
           </div>
           <div className="home__section2">
-            <span className="hex hex-left"></span>
             <div className="home__section2-text">
             <div className="text-float">
               <h1>Tareas</h1>
@@ -31,7 +30,12 @@ function Home(){
               <p>Calcula tu nota en la materia y cuanto necesitas para pasar!</p>
             </div>
           </div>
-          <span className="hex hex-right"></span>
+          <div className="home__section2-background">
+            <div className="hex hex-left"></div>
+            <div className="hex hex-right"></div>
+            <div className="bee bee-top"></div>
+            <div className="bee bee-down"></div>
+            </div>
           </div>
         </div>
     )
