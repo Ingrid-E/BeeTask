@@ -32,4 +32,17 @@ const loginUser = async(req, res, next)=>{
     }
 }
 
-module.exports = {registerUser, loginUser};
+const seeUser = async(req, res, next) =>{
+    try {
+        const {userId} = req.body;
+        const response = await pool.query("SELECT name, surnames FROM USERS WHERE userid = $1", [userId]);
+        if(response.rowCount === 0){
+            res.status(404).json({message:"The userId is not valid"});
+        }
+    } catch (error) {
+        next(error);   
+
+    }
+}
+
+module.exports = {registerUser, loginUser, seeUser};

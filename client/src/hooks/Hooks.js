@@ -25,13 +25,12 @@ export async function post(endpoint, data) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }); console.log("ab23: ", response);
+  });
   if (!response.ok) {
     // make the promise be rejected if we didn't get a 2xx response
     const err = new Error("Not 2xx response");
     err.response = response;
     const errorData = await err.response.json();
-    //console.log("errorhandler: ", nidea);
     throw errorData;
   } else {
     const responseData =  await response.json();

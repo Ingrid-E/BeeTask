@@ -16,6 +16,10 @@ if(process.env.NODE_ENV === "production"){
 
 //Archivo que contiene el código api de las rutas
 app.use(require("./routes/loginRoutes"));
+app.use(require("./routes/subjectRoutes"));
+app.use(require("./routes/sectionRoutes"));
+app.use(require("./routes/taskRoutes"));
+
 //manejador de errores
 app.use((err,req,res,next)=>{
   res.status(406).json({message: err.message});
