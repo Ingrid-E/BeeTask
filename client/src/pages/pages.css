@@ -131,6 +131,20 @@
     align-self:flex-end;
 }
 
+.home__info {
+    width: 100vw;
+    height: 100vh;
+}
+
+.home__info-text{
+    width: 22vw;
+    text-align: center;
+}
+
+.home__info-text *{
+    margin: 2vh 0;
+}
+
 @media (max-width: 500px) {
     .bee-top {
         left: 53vw;
