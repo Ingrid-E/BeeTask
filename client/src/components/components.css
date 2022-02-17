@@ -106,3 +106,133 @@
         width: 2rem;
     }
 }
+
+.login-form {
+    width: 515px;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    row-gap: 35px;
+}
+
+.login-form h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.login-form form {
+    display: flex;
+    flex-flow: column;
+    row-gap: 50px;
+}
+
+.login-form .form-fields{
+    width: 375px;
+    display: flex;
+    flex-flow: column;
+    row-gap: 30px;
+}
+
+.login-form .form-fields label{
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.login-form .form-fields input{
+    height: 25px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.login-form .form-fields div {
+    display: flex;
+    flex-flow: column;
+}
+
+.login-form button {
+    font-family: 'Quicksand';
+    font-size: 30px;
+    border-radius: 50px;
+    background: var(--main-color);
+    font-weight: 500;
+}
+
+.login-form span {
+    font-size: 20px;
+}
+
+.login-form span a {
+    text-decoration: none;
+    margin: 0px 10px;
+    color: #E0A025;
+    font-weight: bold;
+}
+
+.register-form {
+    width: 515px;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    row-gap: 35px;
+}
+
+.register-form h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.register-form form {
+    display: flex;
+    flex-flow: column;
+    row-gap: 50px;
+}
+
+.register-form .form-fields{
+    width: 375px;
+    display: flex;
+    flex-flow: column;
+    row-gap: 30px;
+}
+
+.register-form .form-fields label{
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.register-form .form-fields input{
+    height: 25px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.register-form .form-fields div {
+    display: flex;
+    flex-flow: column;
+}
+
+.register-form button {
+    font-family: 'Quicksand';
+    font-size: 30px;
+    border-radius: 50px;
+    background: var(--main-color);
+    font-weight: 500;
+}
+
+.register-form span {
+    font-size: 20px;
+}
+
+.register-form span a {
+    text-decoration: none;
+    margin: 0px 10px;
+    color: #E0A025;
+    font-weight: bold;
+}
