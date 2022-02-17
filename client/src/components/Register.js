@@ -68,24 +68,32 @@ function Register(){
     }
 
     return (
-        <>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="email">email</label>
-        <input type="email" name="email" onChange={handleChange}/>
-        <label htmlFor="name">names</label><input type="name" name="names" onChange={handleChange}/>
-        <label htmlFor="surnames">surnames</label><input type="family-name" name="surnames" onChange={handleChange}/>
-        <label htmlFor="password">password</label><input type="password" name="password" onChange={handleChange}/>
-        <div >
+        <div className='register-form'>
+            <h1>Registrate</h1>
+            <form onSubmit={handleSubmit}>
+                <div className='form-fields'>
+                    <div className='email'>
+                        <label htmlFor="email">email</label>
+                        <input type="email" name="email" onChange={handleChange}/>
+                    </div>
+                    <div className='name'>
+                        <label htmlFor="name">names</label>
+                        <input type="name" name="names" onChange={handleChange}/>
+                    </div>
+                    <div className='surnames'>
+                        <label htmlFor="surnames">surnames</label>
+                        <input type="family-name" name="surnames" onChange={handleChange}/>
+                    </div>
+                    <div className='password'>
+                        <label htmlFor="password">password</label>
+                        <input type="password" name="password" onChange={handleChange}/>
+                    </div>
+                </div>
 
+                <button type='submit'>Listo</button>
+            </form>
+            <span className='noTieneCuenta'>Ya tienes una cuenta?<a href='Login'>Inicia Sesión</a></span>
         </div>
-        <button type='submit'>Submit!</button>
-        </form>
-        
-        
-        </>
-
-
     )
 
 }

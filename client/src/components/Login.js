@@ -40,22 +40,24 @@ function Login(){
     }
 
     return (
-        <>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="email">email</label>
-        <input type="email" name="email" onChange={handleChange}/>
-        <label htmlFor="password">password</label>
-        <input type="password" name="password" onChange={handleChange}/>
-        <div >
-
+        <div className='login-form'>
+            <h1>Iniciar Sesión</h1>
+            <form onSubmit={handleSubmit}>
+                <div className='form-fields'>
+                    <div className='email'>
+                        <label htmlFor="email">Correo</label>
+                        <input type="email" name="email" onChange={handleChange}/>
+                    </div>
+                    <div className='password'>
+                        <label htmlFor="password">Contraseña</label>
+                        <input type="password" name="password" onChange={handleChange}/>
+                    </div>
+                </div>
+                
+                <button type='submit'>Entrar</button>
+            </form>
+            <span className='noTieneCuenta'>No tienes cuenta aun?<a href='Register'>Registrate</a></span>
         </div>
-        <button type='submit'>Submit!</button>
-        </form>
-        
-        
-        </>
-
 
     )
 

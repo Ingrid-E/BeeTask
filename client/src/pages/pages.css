@@ -6,47 +6,169 @@
 }
 
 .home {
-    position: absolute; width: 100%; overflow-x: hidden
+    position: absolute; width: 100%; overflow: hidden;
 }
 :root {
     --main-color: #FEE69F;
 }
 
-.home__start {
+.home .home__start {
     display: flex;
     height: 100vh;
     overflow: hidden;
     align-items: center;
-    background-image: url('../assets/Images/People-Images.png');
-    background-size: 50rem;
-    background-repeat: no-repeat;
-    background-position: 50vw -10rem;
-
+    overflow: hidden;
+    position: relative;
 }
 
-.home__start-text {
+.home .home__start-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 25rem;
     height: 40vh;
     margin-left: 5%;
+    z-index: 2;
 }
 
-.home__start-text h1{
+.home .home__start-text h1{
     font-size: 3.2em;
 }
 
-.home__start-text p{
+.home .home__start-text p{
     font-size: 1.15em;
 }
 
-.home__start-text button{
+.home .home__start-text button{
     font-size: 1.15em;
     width: fit-content;
 }
 
-.home__section2 {
+.home .home__hexagons-container{
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: -18%;
+    top: -15%;
+    transform: translateY(6vh);
+}
+
+.home .home__group-hexagons{
+    display: flex;
+    column-gap: 2vh;
+}
+
+.home .home__group-hexagons:nth-child(2){
+    transform: translateX(-16vh) translateY(-6vh);
+}
+
+.home .home__group-hexagons:nth-child(3){
+    transform: translateY(-12vh);
+}
+
+.home .home__group-hexagons:nth-child(4){
+    transform: translateX(-16vh) translateY(-18vh);
+}
+
+.home .home__hexagon-container{
+    background: #FFCE70;
+    width: 30vh;
+    height: 35vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+}
+
+.home .home__group-hexagons:nth-child(1) .home__hexagon-container:nth-child(1){
+    left: -15vh;
+    top: -10%;
+    background: url(../assets/Images/home-media/polygon-background1.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(1) .home__hexagon-container:nth-child(2){
+    left: 18vh;
+    top: -10%;
+    background: url(../assets/Images/home-media/polygon-background2.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(1) .home__hexagon-container:nth-child(3){
+    left: 51vh;
+    top: -10%;
+    background: url(../assets/Images/home-media/polygon-background3.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(1) .home__hexagon-container:nth-child(4){
+    left: 1.5vh;
+    top: 18%;
+    background: url(../assets/Images/home-media/polygon-background4.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(2) .home__hexagon-container:nth-child(1){
+    left: 34.5vh;
+    top: 18%;
+    background: url(../assets/Images/home-media/polygon-background5.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(2) .home__hexagon-container:nth-child(2){
+    left: 67.5vh;
+    top: 18%;
+    background: url(../assets/Images/home-media/polygon-background6.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(2) .home__hexagon-container:nth-child(3){
+    left: -15vh;
+    top: 46%;
+    background: url(../assets/Images/home-media/polygon-background7.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(2) .home__hexagon-container:nth-child(4){
+    left: 18vh;
+    top: 46%;
+    background: url(../assets/Images/home-media/polygon-background8.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(3) .home__hexagon-container:nth-child(1){
+    left: 51vh;
+    top: 46%;
+    background: url(../assets/Images/home-media/polygon-background9.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(3) .home__hexagon-container:nth-child(2){
+    left: 1.5vh;
+    top: 74%;
+    background: url(../assets/Images/home-media/polygon-background10.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(3) .home__hexagon-container:nth-child(3){
+    left: 34.5vh;
+    top: 74%;
+    background: url(../assets/Images/home-media/polygon-background11.jpg);
+    background-size: cover;
+}
+
+.home .home__group-hexagons:nth-child(3) .home__hexagon-container:nth-child(4){
+    left: 67.5vh;
+    top: 74%;
+    background: url(../assets/Images/home-media/polygon-background12.jpg);
+    background-size: cover;
+}
+
+.home .home__section2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,11 +179,11 @@
     background-color: var(--main-color);
 }
 
-.home__section2-background {
+.home .home__section2-background {
     position: absolute;
 }
 
-.hex {
+.home .hex {
     position:relative;
     min-width: 40vh;
     height: 40vh;
@@ -69,17 +191,17 @@
     background-size:cover;
     z-index: 1;
 }
-.hex-left {
+.home .hex-left {
     left: 50vw;
     top: -5vh;
 }
 
-.hex-right {
+.home .hex-right {
     left: -50vw;
     top: 5vh;
 }
 
-.bee{
+.home .bee{
     position: absolute;
     width: 7rem;
     height: 7rem;
@@ -88,20 +210,20 @@
     z-index: 2;
 }
 
-.bee-top {
+.home .bee-top {
     top: -5vh;
     left: 40vw;
 
 }
 
-.bee-down {
+.home .bee-down {
     top: 50vh;
     left: -25vw;
     background-image: url('../assets/Images/Bee-rotated.png');
 }
 
 
-.home__section2-text {
+.home .home__section2-text {
     display: flex;
     text-align: center;
     width: 70%;
@@ -110,38 +232,38 @@
     z-index: 3;
 }
 
-.text-float {
+.home .text-float {
     width: 14rem;
 }
 
-.text-float h1 {
+.home .text-float h1 {
     font-size: 2.2em;
     margin-bottom: 1rem;
 }
 
-.text-float p {
+.home .text-float p {
     font-size: 1.1em;
 }
 
-.text-float:nth-child(2) {
+.home .text-float:nth-child(2) {
     align-self:center;
 }
 
-.text-float:nth-child(3) {
+.home .text-float:nth-child(3) {
     align-self:flex-end;
 }
 
-.home__info {
+.home .home__info {
     width: 100vw;
     height: 100vh;
 }
 
-.home__info-text{
+.home .home__info-text{
     width: 22vw;
     text-align: center;
 }
 
-.home__info-text *{
+.home .home__info-text *{
     margin: 2vh 0;
 }
 
@@ -187,7 +309,7 @@
         -moz-border-radius: 1rem;
         -ms-border-radius: 1rem;
         -o-border-radius: 1rem;
-}
+    }
     .home__start {
         background-position: 30vw -10rem;
         transform: scaleX(-1);
@@ -195,5 +317,157 @@
         -moz-transform: scaleX(-1);
         -ms-transform: scaleX(-1);
         -o-transform: scaleX(-1);
+    }
 }
+
+.login {
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
+    position: relative;
+    display: flex;
+}
+
+.login__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__container-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.login .login__hexagons-container:nth-child(1){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: -40%;
+    top: -15%;
+    transform: translateY(6vh);
+}
+
+.login .login__group-hexagons{
+    display: flex;
+    column-gap: 2vh;
+}
+
+.login .login__group-hexagons:nth-child(2){
+    transform: translateX(-16vh) translateY(-6vh);
+}
+
+.login .login__group-hexagons:nth-child(3){
+    transform: translateY(-12vh);
+}
+
+.login .login__group-hexagons:nth-child(4){
+    transform: translateX(-16vh) translateY(-18vh);
+}
+
+.login .login__hexagon-container{
+    background: #FFCE70;
+    width: 30vh;
+    height: 35vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+}
+
+.login .login__hexagons-container:nth-child(2){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    left: -40%;
+    top: -15%;
+    transform: translateY(6vh) scaleX(-1);
+}
+
+.register {
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
+    position: relative;
+    display: flex;
+}
+
+.register__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__container-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.register .register__hexagons-container:nth-child(1){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: -40%;
+    top: -15%;
+    transform: translateY(6vh);
+}
+
+.register .register__group-hexagons{
+    display: flex;
+    column-gap: 2vh;
+}
+
+.register .register__group-hexagons:nth-child(2){
+    transform: translateX(-16vh) translateY(-6vh);
+}
+
+.register .register__group-hexagons:nth-child(3){
+    transform: translateY(-12vh);
+}
+
+.register .register__group-hexagons:nth-child(4){
+    transform: translateX(-16vh) translateY(-18vh);
+}
+
+.register .register__hexagon-container{
+    background: #FFCE70;
+    width: 30vh;
+    height: 35vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+}
+
+.register .register__hexagons-container:nth-child(2){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    left: -40%;
+    top: -15%;
+    transform: translateY(6vh) scaleX(-1);
 }

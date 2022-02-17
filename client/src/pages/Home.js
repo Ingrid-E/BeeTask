@@ -16,6 +16,32 @@ function Home() {
           </p>
           <button className="yellow-button">REGISTRARSE</button>
         </div>
+        <div class="home__hexagons-container">
+            <div class="home__group-hexagons">
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+            </div>
+            <div class="home__group-hexagons">
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+            </div>
+            <div class="home__group-hexagons">
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+            </div>
+            <div class="home__group-hexagons">
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+                <div class="home__hexagon-container"></div>
+            </div>
+        </div>
       </div>
       <div className="home__section2">
         <div className="home__section2-text">

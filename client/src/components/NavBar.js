@@ -11,8 +11,8 @@ function NavBar() {
         <li>INICIO</li>
         <li>NOSOTROS</li>
         <li>RECURSOS</li>
-        <li className="navbar__important">INICIAR SESIÓN</li>
-        <li className="navbar__button yellow-button">REGISTRARSE</li>
+        <li className="navbar__important"><a href="Login">INICIAR SESIÓN</a></li>
+        <li className="navbar__button yellow-button"><a href="Register">REGISTRARSE</a></li>
       </ul>
       <div
         className={`navbar__hamburger ${menu ? "open" : ""}`}
