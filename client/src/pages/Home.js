@@ -58,6 +58,10 @@ function Home() {
         </div>
         <img src={BeeHive}></img>
       </div>
+      <div className="home__info-bees">
+        <div className="bee bee-top"></div>
+          <div className="bee bee-down"></div>
+      </div>
     </div>
   );
 }

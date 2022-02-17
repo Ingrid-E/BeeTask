@@ -80,7 +80,7 @@
 }
 
 .bee{
-    position: absolute;
+    position: relative;
     width: 7rem;
     height: 7rem;
     background-image: url('../assets/Images/Bee.png');
@@ -132,18 +132,48 @@
 }
 
 .home__info {
+    display: flex;
+    flex-direction: row;
     width: 100vw;
     height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.home__info *{
+margin: 0 10vw;
 }
 
 .home__info-text{
-    width: 22vw;
+    width: 25vw;
     text-align: center;
+}
+
+.home__info-text h1 {
+    font-size: 2em;
+}
+
+.home__info-text p {
+    font-size: 1.2em;
 }
 
 .home__info-text *{
     margin: 2vh 0;
 }
+
+.home__info img {
+    width: 30rem;
+    height: 28rem;
+}
+.yellow-button {
+    font-size: 1.2em;
+}
+
+.home__info-bees {
+    position: absolute;
+    width: 100vw;
+}
+
 
 @media (max-width: 500px) {
     .bee-top {
