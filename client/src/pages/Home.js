@@ -2,6 +2,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import BeeHive from '../assets/Images/BeeHive.png'
+import Image from '../assets/Images/placeholder.png'
 import "./pages.css";
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
             Todas las herramientas que necesitas en un solo lugar. Comienza a
             utilizarlas ya!
           </p>
-          <button className="yellow-button">REGISTRARSE</button>
+          <button className="yellow-button"><a href="Register">REGISTRARSE</a></button>
         </div>
         <div class="home__hexagons-container">
             <div class="home__group-hexagons">
@@ -72,6 +73,7 @@ function Home() {
         </div>
       </div>
       <div className="home__info">
+      <div className="home__info-content">
         <div className="home__info-text">
           <h1>Titulo</h1>
           <p>
@@ -87,6 +89,61 @@ function Home() {
       <div className="home__info-bees">
         <div className="bee bee-top"></div>
           <div className="bee bee-down"></div>
+      </div>
+      </div>
+      <div className="home__info placeholder">
+      <div className="home__info-content">
+        <img src={Image}></img>
+        <div className="home__info-text">
+          <h1>Titulo</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique
+            non elementum in tempor, a dis. Quis nisl vel sodales praesent elit
+            amet. Tempor venenatis diam vulputate fames commodo. Ac id proin
+            molestie egestas elit at gravida vehicula sed.
+          </p>
+          <button className="yellow-button">Texto</button>
+        </div>
+      </div>
+      <div className="home__info-bees">
+        <div className="bee bee-top"></div>
+      </div>
+      </div>
+      <div className="home__info placeholder no-reverse">
+      <div className="home__info-content">
+        <div className="home__info-text">
+          <h1>Titulo</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique
+            non elementum in tempor, a dis. Quis nisl vel sodales praesent elit
+            amet. Tempor venenatis diam vulputate fames commodo. Ac id proin
+            molestie egestas elit at gravida vehicula sed.
+          </p>
+          <button className="yellow-button">Texto</button>
+        </div>
+        <img src={Image}></img>
+      </div>
+      <div className="home__info-bees">
+        <div className="bee bee-top"></div>
+      </div>
+      </div>
+      <div className="home__info placeholder">
+      <div className="home__info-content">
+        <img src={Image}></img>
+        <div className="home__info-text">
+          <h1>Titulo</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique
+            non elementum in tempor, a dis. Quis nisl vel sodales praesent elit
+            amet. Tempor venenatis diam vulputate fames commodo. Ac id proin
+            molestie egestas elit at gravida vehicula sed.
+          </p>
+          <button className="yellow-button">Texto</button>
+        </div>
+      </div>
+      <div className="home__info-bees">
+        <div className="bee bee-top"></div>
+      </div>
       </div>
     </div>
   );
