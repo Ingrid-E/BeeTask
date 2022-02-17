@@ -18,7 +18,7 @@ export async function get(endpoint) {
 }
 
 export async function post(endpoint, data) {
-  const response = await fetch(dir+endpoint, {
+  const response = await fetch(endpoint, {
     method: "POST",
     headers: {
       Accept: "application/json",

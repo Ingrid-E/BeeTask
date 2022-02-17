@@ -41,7 +41,7 @@ function Register() {
 
   const registerUser = async () => {
     try {
-      const resData = await post("register", user);
+      const resData = await post("/register", user);
       console.log(resData);
     } catch (error) {
       console.log("Error en la BD: ", error.message);

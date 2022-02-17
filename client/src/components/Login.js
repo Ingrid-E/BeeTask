@@ -16,7 +16,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: { "Content-Type": "application/json" },
