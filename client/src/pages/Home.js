@@ -1,8 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import NavBar from "../components/NavBar";
-import BeeHive from '../assets/Images/BeeHive.png'
 import Image from '../assets/Images/placeholder.png'
+import Image1 from '../assets/Images/home-media/home-icons/clock.png'
+import Image2 from '../assets/Images/home-media/home-icons/calculator.png'
+import Image3 from '../assets/Images/home-media/home-icons/calendar.png'
+import Image4 from '../assets/Images/home-media/home-icons/flash-cards.png'
+import Image5 from '../assets/Images/home-media/home-icons/grade.png'
+import Image6 from '../assets/Images/home-media/home-icons/notepad.png'
 import "./pages.css";
 function Home() {
   return (
@@ -84,7 +89,21 @@ function Home() {
           </p>
           <button className="yellow-button">Texto</button>
         </div>
-        <img src={BeeHive}></img>
+        <div class="info__hexagons-container">
+            <div class="info__group-hexagons">
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image1}></img></div>
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image2}></img></div>
+            </div>
+            <div class="info__group-hexagons">
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image3}></img></div>
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image4}></img></div>
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image5}></img></div>
+            </div>
+            <div class="info__group-hexagons">
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image6}></img></div>
+                <div class="info__hexagon-container"><img className="hexagon-img" src={Image1}></img></div>
+            </div>
+        </div>
       </div>
       <div className="home__info-bees">
         <div className="bee bee-top"></div>
