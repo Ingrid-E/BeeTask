@@ -8,7 +8,9 @@ import Image3 from '../assets/Images/home-media/home-icons/calendar.png'
 import Image4 from '../assets/Images/home-media/home-icons/flash-cards.png'
 import Image5 from '../assets/Images/home-media/home-icons/grade.png'
 import Image6 from '../assets/Images/home-media/home-icons/notepad.png'
-import "./pages.css";
+import "./Home.css";
+
+
 function Home() {
   return (
     <div className="home">

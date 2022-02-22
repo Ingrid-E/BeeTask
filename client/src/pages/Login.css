@@ -1,0 +1,134 @@
+@import "./pages.css";
+
+.login {
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
+    position: relative;
+    display: flex;
+}
+.login__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login__container-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.login .login__hexagons-container:nth-child(1){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: -40%;
+    top: -15%;
+    transform: translateY(6vh);
+}
+.login .login__group-hexagons{
+    display: flex;
+    column-gap: 2vh;
+}
+.login .login__group-hexagons:nth-child(2){
+    transform: translateX(-16vh) translateY(-6vh);
+}
+.login .login__group-hexagons:nth-child(3){
+    transform: translateY(-12vh);
+}
+.login .login__group-hexagons:nth-child(4){
+    transform: translateX(-16vh) translateY(-18vh);
+}
+.login .login__hexagon-container{
+    background: #FFCE70;
+    width: 30vh;
+    height: 35vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+}
+.login .login__hexagons-container:nth-child(2){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    left: -40%;
+    top: -15%;
+    transform: translateY(6vh) scaleX(-1);
+}
+.register {
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
+    position: relative;
+    display: flex;
+}
+.register__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register__container-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.register .register__hexagons-container:nth-child(1){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: -40%;
+    top: -15%;
+    transform: translateY(6vh);
+}
+.register .register__group-hexagons{
+    display: flex;
+    column-gap: 2vh;
+}
+.register .register__group-hexagons:nth-child(2){
+    transform: translateX(-16vh) translateY(-6vh);
+}
+.register .register__group-hexagons:nth-child(3){
+    transform: translateY(-12vh);
+}
+.register .register__group-hexagons:nth-child(4){
+    transform: translateX(-16vh) translateY(-18vh);
+}
+.register .register__hexagon-container{
+    background: #FFCE70;
+    width: 30vh;
+    height: 35vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+}
+.register .register__hexagons-container:nth-child(2){
+    width: auto;
+    height: fit-content;
+    background: none;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    left: -40%;
+    top: -15%;
+    transform: translateY(6vh) scaleX(-1);
+}
