@@ -1,10 +1,7 @@
 import React, { useState, useEffect  } from 'react';
-import {useNavigate} from "react-router-dom";
 
-function NewSection(props){
-    const navigate = useNavigate();
-    const userid = props.userid;
-    console.log("id del usuario: ",userid);
+function NewSection(){
+
     
     const [section, setsection] = useState({
         sectionName: '',
@@ -46,10 +43,9 @@ function NewSection(props){
      
      <>
         <form onSubmit={createsection}>
-        <h1>Nueva seccion</h1>
         <label htmlFor="name">Titulo</label>
         <input type="section" name="sectionName" onChange={handlesection}/>
-        <label htmlFor="gradePercentage">Porcentaje en la nota</label>
+        <label htmlFor="gradePercentage"> Porcentaje en la nota</label>
         <input type="text" name="gradePercentage" onChange={handlesection}/>
 
         <button type='submit'>Nueva seccion +</button>

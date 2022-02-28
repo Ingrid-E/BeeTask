@@ -1,8 +1,6 @@
 import React, { useState, useEffect  } from 'react';
-import {useNavigate} from "react-router-dom";
 
 function NewSubject(props){
-    const navigate = useNavigate();
     const userid = props.userid;
     console.log("id del usuario: ",userid);
     

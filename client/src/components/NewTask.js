@@ -1,9 +1,12 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect, useContext  } from 'react';
+import SubjectsContext from '../context/Subjects/SubjectsContext';
 
 
-function NewTask(){
+function NewTask(props){
+    const userid = props.userid;
+    const subjectsContext = useContext(SubjectsContext);
 
-
+    const [courseSelected, setCourseSelected] = useState(0);
     const [task, setTask] = useState({
         name: '',
         description: '',
@@ -24,11 +27,11 @@ function NewTask(){
 
 
       useEffect(()=>{
-      
-        },[task, dateTime])
+
+    },[task, dateTime])
 
       const handleTask = async (e) =>{
-          
+        console.log("namein: ", e.target.name)
         setTask({...task, [e.target.name]:e.target.value} )
     };
 
@@ -91,6 +94,7 @@ function NewTask(){
 
         const taskSnapshot = {...task, datetime: dateTime.year+"/"+dateTime.month+"/"+dateTime.day+" "+HoursConverter12FormatTo24Format(dateTime.hours, dateTime.minutes, dateTime.am_pm)}
         setTask(taskSnapshot);
+        console.log("mi post es: ",taskSnapshot);
             const res = await fetch("http://localhost:5000/addTask",{
             method: "POST",
             body: JSON.stringify(taskSnapshot),
@@ -107,6 +111,22 @@ function NewTask(){
         }
     
  
+    }
+
+    const handleCourseSelect = (e) =>{
+        console.log("testing: ", e.target.value);
+        setCourseSelected(e.target.value);
+        subjectsContext.getSubjects(userid);
+    }
+
+   
+
+
+    const handleSectionSelect = (e) =>{
+        console.log("testing2: ", e.target.value);
+        console.log("testingname: ", e.target.name);
+
+        subjectsContext.getSections(courseSelected);
     }
 
     return (
@@ -133,17 +153,26 @@ function NewTask(){
         <input type="minutes" name="minutes" onChange={handleDate}/>
         <label htmlFor="am_pm">AM/PM</label>
         <input type="text" name="am_pm" onChange={handleDate}/>
-        <h3>Curso</h3>
-        <select>
-        <option name=""></option>
-        
 
+        <h3>Curso</h3>
+        <select onClick={handleCourseSelect} name="subject">
+        {subjectsContext.subjects.map((aSubject)=>(
+            <option value={aSubject.idsubject}>
+                {aSubject.subjectname}
+            </option>
+        )
+        )}
         </select>
         <h3>Sección</h3>
-        <select>
-        <option name="idSECTION" value=""></option>
+        <select onClick={handleSectionSelect} name="idSECTION" onChange={handleTask}>
+        {subjectsContext.sections.map((aSection)=>(
+            <option value={aSection.idsection}>
+                {aSection.sectionname}
+            </option>
+        )
+        )
 
-
+        }
         </select>
         <h3>Prioridad</h3>
         <label>Normal</label>

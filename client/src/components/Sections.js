@@ -1,48 +1,41 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useEffect, useContext  } from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import Tasks from './Tasks';
+import SubjectsContext from '../context/Subjects/SubjectsContext';
+import NewSection from './NewSection'
 function Sections(){
     const navigate = useNavigate();
     const params = useParams();
     const idSUBJECT = params.idSUBJECT;
     const userid = params.userid;
-    console.log("id de la materia: ",idSUBJECT);
-
-    const [sections, setSections] = useState([]);
+    const subjectsContext = useContext(SubjectsContext);
 
       useEffect(()=>{
-        getSections(idSUBJECT);
+        subjectsContext.getSections(idSUBJECT);
         },[])
-
-        const getSections = async (id) =>{
-            //Secciones
-            const gettingSections = await fetch("http://localhost:5000/seeSections/"+id);
-            const dataSections = await gettingSections.json();
-            console.log("paquete: ",dataSections);
-            console.log("idsubjec: ", idSUBJECT); 
-            setSections(dataSections);
-            
-        }
 
         const handleButton = () =>{
             navigate("/menu/"+userid);
-            console.log(sections);
         }
     return (
      
      <>
+        <h1>Crear una nueva seccion</h1>
+        <NewSection/>
+
         <h1>Mis secciones</h1>
         {
-            
-            sections.map((aSection)=>(
+        subjectsContext.sections.length > 0
+            ? subjectsContext.sections.map((aSection)=>(
                 <>
                 <h3>{aSection.sectionname} {aSection.gradepercentage}%</h3>
-                <Tasks idSECTION={aSection.idSECTION}/>
+                <Tasks idSECTION={aSection.idsection}/>
                 </>
             )
             )
+        : (<h1>Aun no tienes secciones, prueba a crear una.</h1>)
 
-        }        
+        }
         <button onClick={handleButton}>Volver al menu</button>
         </>
 

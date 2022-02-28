@@ -1,0 +1,2 @@
+export const GET_SUBJECTS = "GET_SUBJECTS";
+export const GET_SECTIONS = "GET_SECTIONS";

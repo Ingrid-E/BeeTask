@@ -1,24 +1,21 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect, useContext  } from 'react';
 import {useNavigate} from "react-router-dom";
-
+import SubjectsContext from "../context/Subjects/SubjectsContext";
 function SeeSubjects(props){
     const navigate = useNavigate();
-    const userid = props.userid;
-    console.log("id del usuario: ",userid);
 
-    const [subjects, setSubjects] = useState([]);
+    const subjectsContext = useContext(SubjectsContext);
+
+    const userid = props.userid;
+
 
       useEffect(()=>{
-        getSubjects(userid);
+
+        subjectsContext.getSubjects(userid);
+
         },[])
 
-        const getSubjects = async (id) =>{
-            //cursos
-            const gettingsubjects = await fetch("http://localhost:5000/seeSubjects/"+userid);
-            const dataSubjects = await gettingsubjects.json();
-            setSubjects(dataSubjects);
-            
-        }
+   
 
         const handleNavigate = (idsubject) =>{
             navigate("/sections/"+userid+"/"+idsubject)
@@ -28,15 +25,15 @@ function SeeSubjects(props){
      <>
         <h1>Mis cursos</h1>
         {
-            
-            subjects.map((aSubject)=>(
+            subjectsContext.subjects.length > 0
+              ? subjectsContext.subjects.map((aSubject)=>(
                 <>
                 <h3>{aSubject.subjectname}</h3>
                 <button onClick={()=> handleNavigate(aSubject.idsubject)}>Ver materia</button>
                 </>
             )
             )
-
+          : (<h3>Aun no tienes cursos, prueba a crear uno</h3>)
         }        
         
         </>

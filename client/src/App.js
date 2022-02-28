@@ -5,6 +5,8 @@ import Register from "./components/Register";
 import Home from "./pages/Home";
 import Menu from "./components/Menu";
 import Sections from "./components/Sections";
+import SubjectsState from "./context/Subjects/SubjectsState"
+
 function App(){
 
     return(
@@ -15,7 +17,9 @@ function App(){
           <Route path='/register'element={<Register/>} />
           <Route path='/login'element={<Login/>} />
           <Route path='/menu/:userid'element={<Menu/>} />
-          <Route path='/sections/:userid/:idSUBJECT' element={<Sections/>} />
+          <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState>
+            <Sections/>
+            </SubjectsState>} />
 
         </Routes>
       </Router>
