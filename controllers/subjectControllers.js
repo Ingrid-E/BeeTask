@@ -32,12 +32,13 @@ const editSubject = async(req, res, next)=>{
 
 const seeSubjects = async(req, res, next)=>{
     try {
-    const {userid} = req.body;
-    const response = await pool.query("SELECT subjectname FROM subject WHERE userid = $1;", [userid]);
+    const {userid} = req.params;
+    console.log("el userid: ", userid);
+    const response = await pool.query("SELECT subjectname, idsubject FROM subject WHERE userid = $1;", [userid]);
     if(response.rowCount === 0){
         res.status(404).json({message:`The user with the userid: ${userid} not exists`});
     }
-    res.status(200).json("showing subjects");
+    res.status(200).json(response.rows);
     } catch (error) {
      next(error);   
     }
@@ -45,12 +46,12 @@ const seeSubjects = async(req, res, next)=>{
 
 const seeOneSubject = async(req, res, next)=>{
     try {
-    const {userid, idsubject} = req.body;
-    const response = await pool.query("SELECT subjectname, description FROM subject WHERE userid = $1;", [userid]);
+    const {idSUBJECT} = req.body;
+    const response = await pool.query("SELECT subjectname, description FROM subject WHERE idsubject = $1;", [idSUBJECT]);
     if(response.rowCount === 0){
-        res.status(404).json({message:`The user with the userid: ${userid} not exists or the subject with the idsubject: ${idsubject} not exists`});
+        res.status(404).json({message:`the idsubject: ${idsubject} not exists`});
     }
-    res.status(200).json("showing subject");
+    res.status(200).json(response.rows[0]);
     } catch (error) {
      next(error);   
     }

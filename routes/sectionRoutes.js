@@ -4,7 +4,7 @@ const { addSection, deleteSection, editSection, seeSections} = require("../contr
 app.post("/addSection", addSection);
 app.delete("/deleteSection", deleteSection);
 app.put("/editSection", editSection);
-app.get("/seeSections", seeSections);
+app.get("/seeSections/:idSUBJECT", seeSections);
 
 
 

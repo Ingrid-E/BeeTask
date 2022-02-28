@@ -32,9 +32,8 @@ function Login(){
         }else if(resData.message === 'password is incorrect'){
             console.log("Contraseña incorrecta");
         }else{
-            //si todo va bien, tira un true -> resData===true
-            navigate("/");
-
+            console.log("logeado el user con id:"+resData);
+            navigate("/menu/"+resData);
         }
     
  

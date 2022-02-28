@@ -2,8 +2,8 @@ const pool = require("../db");
 
 const addTask = async(req, res, next)=>{
     try {
-    const {name, description, datetime, priority, grade, idSECTION} = req.body;
-    await pool.query("INSERT INTO TASK (name, description, datetime, priority, grade, idSECTION) VALUES ($1, $2, $3, $4, $5, $6);", [name, description, datetime, priority, grade, idSECTION]);
+    const {name, description, datetime, priority, idSECTION} = req.body;
+    await pool.query("INSERT INTO TASK (name, description, datetime, priority, idSECTION) VALUES ($1, $2, $3, $4, $5);", [name, description, datetime, priority, idSECTION]);
     res.status(200).json("task created");
     } catch (error) {
      next(error);   
@@ -32,12 +32,12 @@ const editTask = async(req, res, next)=>{
 
 const seeTasks = async(req, res, next)=>{
     try {
-    const {idSECTION} = req.body;
+    const {idSECTION} = req.params;
     const response = await pool.query("SELECT name, grade FROM TASK WHERE idSECTION = $1;", [idSECTION]);
     if(response.rowCount === 0){
         res.status(404).json({message:`The section with the idSECTION: ${idSECTION} not exists`});
     }
-    res.status(200).json("showing tasks");
+    res.status(200).json(response.rows);
     } catch (error) {
      next(error);   
     }
@@ -50,7 +50,7 @@ const seeOneTask = async(req, res, next)=>{
     if(response.rowCount === 0){
         res.status(404).json({message:`The task with the idTASK: ${idTASK} not exists`});
     }
-    res.status(200).json("showing task");
+    res.status(200).json(response.rows[0]);
     } catch (error) {
      next(error);   
     }

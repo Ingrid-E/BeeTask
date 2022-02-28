@@ -1,55 +1,22 @@
-import React, { useState, useEffect  } from 'react';
-import {useNavigate} from "react-router-dom";
+import React from 'react';
+import NewTask from './NewTask';
+import NewSubject from './NewSubject';
+import {useNavigate, useParams} from "react-router-dom"
+import SeeSubjects from './SeeSubjects';
+import NewSection from './NewSection';
 
-
-function Login(){
-    const navigate = useNavigate();
-    const [userName, setUserName] = useState('');
-
-
-      useEffect(()=>{
-    
-      
-        },[userName])
-
-      const handleChange = async (e) =>{
-        setUser({...user, [e.target.name]:e.target.value} )
-    };
-
-    const handleSubmit = async (e)=>{
-        e.preventDefault();
-            const res = await fetch("http://localhost:5000/login",{
-            method: "POST",
-            body: JSON.stringify(user),
-            headers: {"Content-Type": "application/json"}
-        });
-        const resData = await res.json();
-        if(resData.message === 'The email typed is not registered'){
-            console.log("El email ingresado aun no ha sido registrado");
-        }else if(resData.message === 'password is incorrect'){
-            console.log("Contraseña incorrecta");
-        }else{
-            //si todo va bien, tira un true -> resData===true
-            navigate("/");
-
-        }
-    
- 
-    }
+function Menu(){
+    const params = useParams();
+    const userid = params.userid;
 
     return (
-        <>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="email">email</label>
-        <input type="email" name="email" onChange={handleChange}/>
-        <label htmlFor="password">password</label>
-        <input type="password" name="password" onChange={handleChange}/>
-        <div >
+     
+     <>
+     <h1>Menu</h1>
 
-        </div>
-        <button type='submit'>Submit!</button>
-        </form>
+<NewTask></NewTask>
+<SeeSubjects userid={userid}></SeeSubjects>
+<NewSubject userid={userid}></NewSubject>
         
         
         </>
@@ -59,4 +26,4 @@ function Login(){
 
 }
 
-export default Login;
+export default Menu;

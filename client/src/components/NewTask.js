@@ -1,0 +1,167 @@
+import React, { useState, useEffect  } from 'react';
+
+
+function NewTask(){
+
+
+    const [task, setTask] = useState({
+        name: '',
+        description: '',
+        datetime: '',
+        priority: '',
+        idSECTION: 1,
+    });
+    
+
+    const [dateTime, setDateTime] = useState({
+        day: 0,
+        month: 0,
+        year: 0,
+        hours: 0,
+        minutes: 0, 
+        am_pm: ''
+    });
+
+
+      useEffect(()=>{
+      
+        },[task, dateTime])
+
+      const handleTask = async (e) =>{
+          
+        setTask({...task, [e.target.name]:e.target.value} )
+    };
+
+    const handleDate = async(e) => {
+        
+        setDateTime({...dateTime, [e.target.name]:e.target.value});
+
+    };
+//EL RANGO DE HORAS QUE PUEDE ELEGIR EL USUARIO VA DE 1 A 12. 
+    const HoursConverter12FormatTo24Format = (hour12Format, aMinute, amOrPm) =>{
+        let hour24Format = 0;
+        if(amOrPm == 'AM'){
+            if(hour12Format == 12){
+                hour24Format = 0;
+            }else{
+                hour24Format = hour12Format;
+            }
+        }
+
+        if(amOrPm=== 'PM'){
+            if(hour12Format == 12){
+
+                hour24Format = hour12Format;
+            }else{
+                hour24Format = parseInt(hour12Format) +12;
+
+            }
+        }
+
+        return hour24Format+':'+aMinute;
+    }
+
+    //Aqui se buscara que la fecha concuerde con el formato de postgres, la hora ahi es de 00:00 hasta 23:59. 
+    const HoursConverter24FormatTo12Format = (hour24Format, aMinute) =>{
+        let hour12Format = 0;
+        let amOrPm = '';
+        if(hour24Format < 12){
+            amOrPm = 'AM';
+            if(hour24Format == 0){
+                hour12Format = 12;
+            }else{
+                hour12Format = hour24Format;
+            }
+        }
+
+        if(hour24Format >= 12){
+            amOrPm = 'PM';
+            if(hour24Format == 12){
+                hour12Format = 12;
+            }else{
+                hour12Format = parseInt(hour24Format)-12;
+            }
+        }
+
+        return hour12Format+':'+aMinute+''+amOrPm;
+    }
+
+    const createTask = async (e)=>{
+        e.preventDefault();
+
+        const taskSnapshot = {...task, datetime: dateTime.year+"/"+dateTime.month+"/"+dateTime.day+" "+HoursConverter12FormatTo24Format(dateTime.hours, dateTime.minutes, dateTime.am_pm)}
+        setTask(taskSnapshot);
+            const res = await fetch("http://localhost:5000/addTask",{
+            method: "POST",
+            body: JSON.stringify(taskSnapshot),
+            headers: {"Content-Type": "application/json"}
+        });
+        const resData = await res.json();
+        console.log(resData);
+        if(!res.ok){ 
+            console.log("hubo un error al crear la tarea")
+        }else{
+            
+            console.log("tarea creada: ", task);
+
+        }
+    
+ 
+    }
+
+    return (
+     
+     <>
+        <form onSubmit={createTask}>
+        <h1>Nueva Tarea</h1>
+        <label htmlFor="name">Titulo</label>
+        <input type="task" name="name" onChange={handleTask}/>
+        <label htmlFor="description">Descripcion</label>
+        <input type="text" name="description" onChange={handleTask}/>
+
+        <h3>Fecha</h3>
+        <label htmlFor="day">Dia</label>
+        <input type="text" name="day" onChange={handleDate}/>
+        <label htmlFor="month">Mes</label>
+        <input type="text" name="month" onChange={handleDate}/>
+        <label htmlFor="year">Año</label>
+        <input type="text" name="year" onChange={handleDate}/>
+        <h3>Hora</h3>
+        <label htmlFor="hours">Horas</label>
+        <input type="hours" name="hours" onChange={handleDate}/>
+        <label htmlFor="minutes">Minutos</label>
+        <input type="minutes" name="minutes" onChange={handleDate}/>
+        <label htmlFor="am_pm">AM/PM</label>
+        <input type="text" name="am_pm" onChange={handleDate}/>
+        <h3>Curso</h3>
+        <select>
+        <option name=""></option>
+        
+
+        </select>
+        <h3>Sección</h3>
+        <select>
+        <option name="idSECTION" value=""></option>
+
+
+        </select>
+        <h3>Prioridad</h3>
+        <label>Normal</label>
+        <input type="Radio" name = "priority" value="Normal" onChange={handleTask}/>
+        <label>Importante</label>
+        <input type="Radio" name = "priority" value="Importante" onChange={handleTask}/>
+        <label>Urgente</label>
+        <input type="Radio" name = "priority" value="Urgente" onChange={handleTask}/>
+
+        <button type='submit'>Nueva Tarea +</button>
+        </form>
+        
+        
+        </>
+
+
+    )
+
+}
+
+export default NewTask;

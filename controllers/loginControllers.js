@@ -15,14 +15,14 @@ const registerUser = async(req, res, next)=>{
 const loginUser = async(req, res, next)=>{
     try {
     const {email, password} = req.body;
-    const response = await pool.query("SELECT password FROM USERS WHERE email=$1", [email]);
+    const response = await pool.query("SELECT password, userid FROM USERS WHERE email=$1", [email]);
     if(response.rowCount === 0){
         res.status(404).json({message:"The email typed is not registered"});
     }
     const passwordHash = response.rows;
     const validPass = await bcrypt.compare(password, passwordHash[0].password);
     if(validPass){
-        res.json(true);
+        res.json(response.rows[0].userid);
     }else{
         res.json({message:"password is incorrect"});
     }
