@@ -27,10 +27,8 @@ const SubjectsState = (props) => {
     const getSections = async (id) =>{
         //Secciones
         try {
-            console.log("paso por context");
             const gettingSections = await fetch("http://localhost:5000/seeSections/"+id);
             const dataSections = await gettingSections.json();
-            console.log("paquete: ",dataSections);
             dispatch({type: GET_SECTIONS, payload: dataSections});       
         } catch (error) {
             console.log(error);

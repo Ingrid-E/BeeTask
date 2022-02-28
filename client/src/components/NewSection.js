@@ -1,12 +1,13 @@
 import React, { useState, useEffect  } from 'react';
 
-function NewSection(){
+function NewSection(props){
 
+    const idsubject = props.idSUBJECT;
     
     const [section, setsection] = useState({
         sectionName: '',
         gradePercentage: 0,
-        idSUBJECT: 0,
+        idSUBJECT: idsubject,
     });
     
       useEffect(()=>{

@@ -12,7 +12,7 @@ function NewTask(props){
         description: '',
         datetime: '',
         priority: '',
-        idSECTION: 1,
+        idSECTION: 0,
     });
     
 
@@ -31,7 +31,8 @@ function NewTask(props){
     },[task, dateTime])
 
       const handleTask = async (e) =>{
-        console.log("namein: ", e.target.name)
+          console.log("noseeeeeeee");
+        console.log("namein: ", e.target.name, "idsectionn: ", e.target.value)
         setTask({...task, [e.target.name]:e.target.value} )
     };
 
@@ -123,12 +124,15 @@ function NewTask(props){
 
 
     const handleSectionSelect = (e) =>{
-        console.log("testing2: ", e.target.value);
+        console.log("testingvalue: ", e.target.value);
         console.log("testingname: ", e.target.name);
-
         subjectsContext.getSections(courseSelected);
-    }
+        setTask({...task, [e.target.name]:e.target.value} )
 
+    }
+    const prints = (e) =>{
+        console.log("it prints");
+    }
     return (
      
      <>
@@ -155,7 +159,7 @@ function NewTask(props){
         <input type="text" name="am_pm" onChange={handleDate}/>
 
         <h3>Curso</h3>
-        <select onClick={handleCourseSelect} name="subject">
+        <select onChange={handleTask} onClick={handleCourseSelect} name="subject">
         {subjectsContext.subjects.map((aSubject)=>(
             <option value={aSubject.idsubject}>
                 {aSubject.subjectname}
@@ -164,9 +168,9 @@ function NewTask(props){
         )}
         </select>
         <h3>Sección</h3>
-        <select onClick={handleSectionSelect} name="idSECTION" onChange={handleTask}>
+        <select defaultChecked="0" onClick={handleSectionSelect} name="idSECTION" onChange={handleTask}>
         {subjectsContext.sections.map((aSection)=>(
-            <option value={aSection.idsection}>
+            <option  value={aSection.idsection}>
                 {aSection.sectionname}
             </option>
         )

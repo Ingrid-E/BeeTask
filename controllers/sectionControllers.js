@@ -34,7 +34,6 @@ const editSection = async(req, res, next)=>{
 const seeSections = async(req, res, next)=>{
     try {
     const {idSUBJECT} = req.params;
-    console.log("idsubject: ", idSUBJECT)
     const response = await pool.query("SELECT sectionName, gradePercentage, idSECTION FROM SECTION WHERE idsubject = $1;", [idSUBJECT]);
     res.status(200).json(response.rows);
     } catch (error) {

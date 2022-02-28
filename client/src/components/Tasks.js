@@ -1,11 +1,8 @@
 import React, { useState, useEffect  } from 'react';
-import {useNavigate} from "react-router-dom";
 
 function Tasks(props){
-    const navigate = useNavigate();
     const idSECTION = props.idSECTION;
-    console.log("id de la seccion: ",idSECTION);
-
+    console.log("la id es: ", idSECTION);
     const [tasks, setTasks] = useState([]);
 
       useEffect(()=>{
@@ -14,9 +11,9 @@ function Tasks(props){
 
         const getTasks = async (id) =>{
             //cursos
-            const gettingtasks = await fetch("http://localhost:5000/seeSections/"+id);
+            const gettingtasks = await fetch("http://localhost:5000/seeTasks/"+id);
             const datatasks = await gettingtasks.json();
-            setTasks(datatasks.filter(aTask => aTask.idSECTION  == id));
+            setTasks(datatasks);
             
         }
 
@@ -26,12 +23,14 @@ function Tasks(props){
      <>
         <h1>Mis tareas</h1>
         {
-            tasks.map((aTask)=>(
+            tasks.length > 0
+              ?tasks.map((aTask)=>(
                 <>
                 <p>{aTask.name} nota: {aTask.grade}</p>
                 </>
             )
             )
+            :<h1>No tienes tareas en esta seccion</h1>
         
             
         }        

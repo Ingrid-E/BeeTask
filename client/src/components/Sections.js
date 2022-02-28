@@ -21,7 +21,7 @@ function Sections(){
      
      <>
         <h1>Crear una nueva seccion</h1>
-        <NewSection/>
+        <NewSection idSUBJECT={idSUBJECT}/>
 
         <h1>Mis secciones</h1>
         {

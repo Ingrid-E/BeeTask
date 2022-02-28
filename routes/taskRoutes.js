@@ -4,7 +4,7 @@ const { addTask, deleteTask, editTask, seeTasks, seeOneTask} = require("../contr
 app.post("/addTask", addTask);
 app.delete("/deleteTask", deleteTask);
 app.put("/editTask", editTask);
-app.get("/seeTasks", seeTasks);
+app.get("/seeTasks/:idSECTION", seeTasks);
 app.get("/seeOneTasks", seeOneTask);
 
 
