@@ -8,56 +8,56 @@ function Register() {
         <div className="register__container">
             <RegisterForm />
             <div className="register__container-background">
-                <div class="register__hexagons-container">
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                <div className="register__hexagons-container">
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
                 </div>
-                <div class="register__hexagons-container">
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                <div className="register__hexagons-container">
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
-                    <div class="register__group-hexagons">
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
-                        <div class="register__hexagon-container"></div>
+                    <div className="register__group-hexagons">
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
+                        <div className="register__hexagon-container"></div>
                     </div>
                 </div>
             </div>

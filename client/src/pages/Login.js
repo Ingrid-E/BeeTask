@@ -8,56 +8,56 @@ function Login() {
         <div className="login__container">
             <LoginForm />
             <div className="login__container-background">
-                <div class="login__hexagons-container">
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                <div className="login__hexagons-container">
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
                 </div>
-                <div class="login__hexagons-container">
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                <div className="login__hexagons-container">
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
-                    <div class="login__group-hexagons">
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
-                        <div class="login__hexagon-container"></div>
+                    <div className="login__group-hexagons">
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
+                        <div className="login__hexagon-container"></div>
                     </div>
                 </div>
             </div>
