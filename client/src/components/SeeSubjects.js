@@ -25,7 +25,7 @@ function SeeSubjects(props){
      <>
         <h1>Mis cursos</h1>
         {
-            subjectsContext.subjects.length > 0
+            subjectsContext.subjects.length >0
               ? subjectsContext.subjects.map((aSubject)=>(
                 <>
                 <h3>{aSubject.subjectname}</h3>
@@ -33,7 +33,7 @@ function SeeSubjects(props){
                 </>
             )
             )
-          : (<h3>Aun no tienes cursos, prueba a crear uno</h3>)
+          : (<h1>No tienes cursos aun, prueba a crear uno</h1>)
         }        
         
         </>

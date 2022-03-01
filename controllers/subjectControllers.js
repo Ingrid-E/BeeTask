@@ -35,9 +35,6 @@ const seeSubjects = async(req, res, next)=>{
     const {userid} = req.params;
     console.log("el userid: ", userid);
     const response = await pool.query("SELECT subjectname, idsubject FROM subject WHERE userid = $1;", [userid]);
-    if(response.rowCount === 0){
-        res.status(404).json({message:`The user with the userid: ${userid} not exists`});
-    }
     res.status(200).json(response.rows);
     } catch (error) {
      next(error);   

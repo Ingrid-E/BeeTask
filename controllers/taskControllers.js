@@ -34,9 +34,6 @@ const seeTasks = async(req, res, next)=>{
     try {
     const {idSECTION} = req.params;
     const response = await pool.query("SELECT name, grade FROM TASK WHERE idSECTION = $1;", [idSECTION]);
-    if(response.rowCount === 0){
-        res.status(404).json({message:`The section with the idSECTION: ${idSECTION} not exists`});
-    }
     res.status(200).json(response.rows);
     } catch (error) {
      next(error);   
