@@ -7,6 +7,12 @@
 :root {
     --main-color: #FEE69F;
 }
+
 .yellow-button {
     font-size: 1.7em;
+    transition: .3s ease-in-out;
+}
+
+.yellow-button:hover {
+    transform: scale(1.1);
 }

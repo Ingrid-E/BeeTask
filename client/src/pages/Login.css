@@ -1,4 +1,4 @@
-@import "./pages.css";
+@import url('./pages.css');
 
 .login {
     width: 100%;
@@ -36,15 +36,19 @@
     display: flex;
     column-gap: 2vh;
 }
+
 .login .login__group-hexagons:nth-child(2){
     transform: translateX(-16vh) translateY(-6vh);
 }
+
 .login .login__group-hexagons:nth-child(3){
     transform: translateY(-12vh);
 }
+
 .login .login__group-hexagons:nth-child(4){
     transform: translateX(-16vh) translateY(-18vh);
 }
+
 .login .login__hexagon-container{
     background: #FFCE70;
     width: 30vh;
@@ -102,15 +106,19 @@
     display: flex;
     column-gap: 2vh;
 }
+
 .register .register__group-hexagons:nth-child(2){
     transform: translateX(-16vh) translateY(-6vh);
 }
+
 .register .register__group-hexagons:nth-child(3){
     transform: translateY(-12vh);
 }
+
 .register .register__group-hexagons:nth-child(4){
     transform: translateX(-16vh) translateY(-18vh);
 }
+
 .register .register__hexagon-container{
     background: #FFCE70;
     width: 30vh;
