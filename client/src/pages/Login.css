@@ -3,7 +3,6 @@
 .login {
     width: 100%;
     height: 100vh;
-    /*overflow: hidden;*/
     position: relative;
     display: flex;
 }
@@ -139,4 +138,19 @@
     left: -40%;
     top: -15%;
     transform: translateY(6vh) scaleX(-1);
+}
+
+@media (max-width: 900px) {
+    .login__hexagons-container:nth-child(1) {
+        width: fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        background: none;
+        display: flex;
+        flex-flow: column;
+        position: absolute;
+        right: -30%;
+        top: -15%;
+        transform: translateY(6vh);
+    }
 }

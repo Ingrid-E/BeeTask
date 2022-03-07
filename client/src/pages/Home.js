@@ -1,18 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import NavBar from "../components/NavBar";
-<<<<<<< HEAD
-import Image from '../assets/Images/placeholder.png'
-import Image1 from '../assets/Images/home-media/home-icons/clock.png'
-import Image2 from '../assets/Images/home-media/home-icons/calculator.png'
-import Image3 from '../assets/Images/home-media/home-icons/calendar.png'
-import Image4 from '../assets/Images/home-media/home-icons/flash-cards.png'
-import Image5 from '../assets/Images/home-media/home-icons/grade.png'
-import Image6 from '../assets/Images/home-media/home-icons/notepad.png'
-import "./Home.css";
-
-
-=======
 import Image1 from '../assets/Images/home-media/home-icons/clock.png';
 import Image2 from '../assets/Images/home-media/home-icons/calculator.png';
 import Image3 from '../assets/Images/home-media/home-icons/calendar.png';
@@ -26,7 +14,6 @@ import Image7 from '../assets/Images/Bee.png';
 import "./pages.css";
 import "./Home.css";
 
->>>>>>> 11-Clean-Code
 function Home() {
   return (
     <div className="home">
