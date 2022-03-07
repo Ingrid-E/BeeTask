@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./components.css";
 import "./Login.css";
+import TextField from '@material-ui/core/TextField'
+import {post} from "../hooks/Hooks"
 
 function Login() {
   const navigate = useNavigate();
@@ -18,35 +20,46 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: { "Content-Type": "application/json" },
-    });
-    const resData = await res.json();
-    if (resData.message === "The email typed is not registered") {
-      console.log("El email ingresado aun no ha sido registrado");
-    } else if (resData.message === "password is incorrect") {
-      console.log("Contraseña incorrecta");
-    } else {
-      //si todo va bien, tira un true -> resData===true
-      navigate("/");
-    }
+    fetchUser(user);
   };
+
+  async function fetchUser(login) {
+    try {
+      const response = await post(`login`, login);
+      console.log(response)
+    } catch (error) {
+      if (error.response.status === 404) {
+        console.log("El usuario no existe")
+      } else if (error.response.status === 500) {
+        console.error(error.response);
+      }
+    }
+  }
 
   return (
     <div className="login-form">
       <h1>Iniciar Sesión</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-fields">
-          <div className="email">
-            <label htmlFor="email">Correo</label>
-            <input type="email" name="email" onChange={handleChange} />
-          </div>
-          <div className="password">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" name="password" onChange={handleChange} />
-          </div>
+        <TextField
+            value={user.email}
+            variant="filled"
+            onChange={handleChange}
+            size="small"
+            label="Correo"
+            name="email"
+            fullWidth
+          />
+          <TextField
+            value={user.password}
+            variant="filled"
+            onChange={handleChange}
+            size="small"
+            type="password"
+            label="Constraseña"
+            name="password"
+            fullWidth
+          />
         </div>
 
         <button type="submit">Entrar</button>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { post } from "../hooks/Hooks";
-
+import "./Register.css"
+import TextField from '@material-ui/core/TextField'
 function Register() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -22,20 +23,18 @@ function Register() {
     name: /^[a-zA-Z]{2,32}(([ ][a-zA-Z]{2,32}){1,2})?$/,
     email: /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$/,
   };
+
   const validateFormData = (data, dataType) => {
     switch (dataType) {
       case "email":
+        console.log(expression.email.test(data))
         return expression.email.test(data);
-        break;
       case "password":
         return expression.password.test(data);
-        break;
       case "name":
         return expression.name.test(data);
-        break;
       default:
         return false;
-        break;
     }
   };
 
@@ -75,22 +74,48 @@ function Register() {
       <h1>Registrate</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-fields">
-          <div className="email">
-            <label htmlFor="email">Correo</label>
-            <input type="email" name="email" onChange={handleChange} />
-          </div>
-          <div className="name">
-            <label htmlFor="name">Nombre</label>
-            <input type="name" name="names" onChange={handleChange} />
-          </div>
-          <div className="surnames">
-            <label htmlFor="surnames">Apellidos</label>
-            <input type="family-name" name="surnames" onChange={handleChange} />
-          </div>
-          <div className="password">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" name="password" onChange={handleChange} />
-          </div>
+        <TextField
+            value={user.email}
+            variant="filled"
+            onChange={handleChange}
+            size="small"
+            label="Correo"
+            name="email"
+            error = {!validateFormData(user.email, "email") && user.email !== ""}
+            helperText = "Ejemplo@correo.com"
+            fullWidth
+          />
+        <TextField
+            value={user.names}
+            variant="filled"
+            onChange={handleChange}
+            size="small"
+            label="Nombre"
+            name="names"
+            error = {!validateFormData(user.names, "name") && user.names !== ""}
+            fullWidth
+          />
+          <TextField
+            value={user.surnames}
+            variant="filled"
+            onChange={handleChange}
+            size="small"
+            label="Apellidos"
+            name="surnames"
+            error = {!validateFormData(user.surnames, "name") && user.surnames !== ""}
+            fullWidth
+          />
+          <TextField
+            value={user.password}
+            variant="filled"
+            onChange={handleChange}
+            size="small"
+            label="Contraseña"
+            name="password"
+            error = {!validateFormData(user.password, "password") && user.password!== ""}
+            helperText = "Debe tener al menos 5 caracteres, mayusculas, numeros y caracteres especiales."
+            fullWidth
+          />
         </div>
 
         <button type="submit">Listo</button>

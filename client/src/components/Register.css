@@ -1,4 +1,4 @@
-.login-form {
+.register-form {
     width: 40vw;
     height: auto;
     position: absolute;
@@ -10,18 +10,18 @@
     row-gap: 35px;
 }
 
-.login-form h1{
+.register-form h1{
     font-size: 50px;
     font-weight: bold;
 }
 
-.login-form form {
+.register-form form {
     display: flex;
     flex-flow: column;
     row-gap: 50px;
 }
 
-.login-form .form-fields{
+.register-form .form-fields{
     width: 40vw;
     display: flex;
     flex-flow: column;
@@ -29,12 +29,12 @@
     overflow-x: hidden;
 }
 
-.login-form .form-fields label{
+.register-form .form-fields label{
     font-size: 20px;
     font-weight: normal;
 }
 
-.login-form .form-fields input{
+.register-form .form-fields input{
     font-size: 20px;
     margin-left: 25px;
 }
@@ -42,27 +42,30 @@
 .MuiFilledInput-root {
     background: white!important;
 }
+.MuiFormHelperText-contained {
+    margin-left: 0!important;
+}
 
-.login-form .form-fields div {
+.register-form .form-fields div {
     display: flex;
     flex-flow: column;
 }
 
-.login-form button {
+.register-form button {
     font-family: 'Quicksand';
     font-size: 30px;
     border-radius: 50px;
     background: var(--main-color);
     font-weight: 500;
 }
-
-.login-form span {
+.register-form span {
     font-size: 20px;
 }
 
-.login-form span a {
+.register-form span a {
     text-decoration: none;
     margin: 0px 10px;
     color: #E0A025;
     font-weight: bold;
 }
+

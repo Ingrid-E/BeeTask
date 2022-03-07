@@ -20,7 +20,7 @@
     height: 100%;
     position: absolute;
 }
-.login .login__hexagons-container:nth-child(1){
+.login__hexagons-container:nth-child(1){
     width: auto;
     height: fit-content;
     background: none;
@@ -58,7 +58,7 @@
     align-items: center;
     transition: .5s all;
 }
-.login .login__hexagons-container:nth-child(2){
+.login__hexagons-container:nth-child(2){
     width: auto;
     height: fit-content;
     background: none;
@@ -140,17 +140,14 @@
     transform: translateY(6vh) scaleX(-1);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+    .login, .register {
+        background-color: #FFCE70;
+    }
     .login__hexagons-container:nth-child(1) {
-        width: fit-content;
-        height: -moz-fit-content;
-        height: fit-content;
-        background: none;
-        display: flex;
-        flex-flow: column;
-        position: absolute;
-        right: -30%;
-        top: -15%;
-        transform: translateY(6vh);
+        display: none;
+    }
+    .login__hexagons-container:nth-child(2) {
+        display: none;
     }
 }
