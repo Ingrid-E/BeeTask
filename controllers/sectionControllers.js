@@ -23,8 +23,10 @@ const deleteSection = async(req, res, next)=>{
 
 const editSection = async(req, res, next)=>{
     try {
-    const {sectionName, gradePercentage, idSECTION} = req.body;
-    await pool.query("UPDATE SECTION SET sectionName = $1, gradePercentage = $2 WHERE idSECTION = $1;", [sectionName, gradePercentage,idSECTION]);
+    console.log("Hola");
+    const {idsection} = req.params;
+    const {sectionname, gradepercentage} = req.body;
+    await pool.query("UPDATE SECTION SET sectionname = $1, gradepercentage = $2 WHERE idsection = $3", [sectionname, gradepercentage, idsection]);
     res.status(200).json("section edited");
     } catch (error) {
      next(error);   
@@ -40,5 +42,6 @@ const seeSections = async(req, res, next)=>{
      next(error);   
     }
 }
+
 
 module.exports = {addSection, deleteSection, editSection, seeSections};

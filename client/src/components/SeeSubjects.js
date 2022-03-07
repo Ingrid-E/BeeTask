@@ -5,7 +5,7 @@ function SeeSubjects(props){
     const navigate = useNavigate();
 
     const subjectsContext = useContext(SubjectsContext);
-
+    
     const userid = props.userid;
 
 

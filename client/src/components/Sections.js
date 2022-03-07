@@ -1,22 +1,39 @@
-import React, { useEffect, useContext  } from 'react';
+import React, { useEffect, useContext, useState  } from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import Tasks from './Tasks';
 import SubjectsContext from '../context/Subjects/SubjectsContext';
 import NewSection from './NewSection'
+
+
 function Sections(){
+    let [ponderado, setPonderado] = useState(0);
     const navigate = useNavigate();
     const params = useParams();
     const idSUBJECT = params.idSUBJECT;
     const userid = params.userid;
     const subjectsContext = useContext(SubjectsContext);
 
+    const loadTask = async () => {
+        let res = await fetch("http://localhost:5000/finalGrade/" + idSUBJECT);
+        let data = await res.json();
+        setPonderado(data);
+      };
+
       useEffect(()=>{
         subjectsContext.getSections(idSUBJECT);
-        },[])
+        },[ponderado])
+
+        
+        const handleChange = async (e) =>{
+            setPonderado({...ponderado, [e.target.name]:e.target.value} )
+        };
 
         const handleButton = () =>{
             navigate("/menu/"+userid);
         }
+    
+        loadTask();
+
     return (
      
      <>
@@ -28,17 +45,21 @@ function Sections(){
         subjectsContext.sections.length > 0
             ? subjectsContext.sections.map((aSection)=>(
                 <>
-                <h3>{aSection.sectionname} {aSection.gradepercentage}%</h3>
-                <Tasks idSECTION={aSection.idsection}/>
+                <h2>{aSection.sectionname} {aSection.gradepercentage}%</h2>
+                <button onClick={() => navigate("/section/"+aSection.idsection)}>editar</button>
+                <Tasks idSECTION = {aSection.idsection}/>
                 </>
             )
             )
         : (<h1>Aun no tienes secciones, prueba a crear una.</h1>)
 
         }
-        <button onClick={handleButton}>Volver al menu</button>
-        </>
 
+        <h2>Nota parcial: {ponderado}</h2>
+        
+        <button onClick={handleButton}>Volver al menu</button>
+
+        </>
 
     )
 

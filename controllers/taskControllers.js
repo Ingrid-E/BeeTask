@@ -20,7 +20,7 @@ const deleteTask = async(req, res, next)=>{
     }
 }
 
-const editTask = async(req, res, next)=>{
+const editTask = async(req, res, next)=>{ 
     try {
     const {name, description, datetime, priority, grade, idTASK} = req.body;
     await pool.query("UPDATE TASK SET name = $1, description = $2, datetime = $3, priority = $4, grade = $5 WHERE idTASK = $6;", [name, description, datetime, priority, grade, idTASK]);
@@ -30,10 +30,36 @@ const editTask = async(req, res, next)=>{
     }
 }
 
+
+const editOneTask = async(req, res, next)=>{ 
+    try {
+        console.log("pasa por aqui");
+    const {idTask} = req.params;
+    console.log("el id: ", idTask);
+    const {name, description, grade} = req.body;
+    console.log("body: ",name, description, grade )
+    await pool.query("UPDATE TASK SET name = $1, description = $2, grade = $3 WHERE idtask = $4;", [name, description, grade, idTask]);
+    res.status(200).json("subject edited");
+    } catch (error) {
+     next(error);   
+    }
+}
+
 const seeTasks = async(req, res, next)=>{
     try {
+        console.log("pasa por tareas")
     const {idSECTION} = req.params;
-    const response = await pool.query("SELECT name, grade FROM TASK WHERE idSECTION = $1;", [idSECTION]);
+    const response = await pool.query("SELECT idtask, name, grade FROM TASK WHERE idSECTION = $1;", [idSECTION]);
+    res.status(200).json(response.rows);
+    } catch (error) {
+     next(error);   
+    }
+}
+
+const tasksDetails = async(req, res, next)=>{
+    try {
+    const {idTask} = req.params;
+    const response = await pool.query("SELECT name, description, grade FROM TASK WHERE idtask = $1;", [idTask]);
     res.status(200).json(response.rows);
     } catch (error) {
      next(error);   
@@ -54,4 +80,4 @@ const seeOneTask = async(req, res, next)=>{
 }
 
 
-module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask};
+module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, tasksDetails, editOneTask};

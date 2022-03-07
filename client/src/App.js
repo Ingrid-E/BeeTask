@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Menu from "./components/Menu";
 import Sections from "./components/Sections";
 import SubjectsState from "./context/Subjects/SubjectsState"
+import TaskForm from "./components/TaskForm";
+import EditSection from "./components/EditSection";
 
 function App(){
 
@@ -17,9 +19,12 @@ function App(){
           <Route path='/register'element={<Register/>} />
           <Route path='/login'element={<Login/>} />
           <Route path='/menu/:userid'element={<Menu/>} />
-          <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState>
+          <Route path='/task/:taskid'element={<TaskForm/>} />
+          <Route path='/section/:sectionId'element={<EditSection/>} />
+          <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState> 
             <Sections/>
-            </SubjectsState>} />
+            </SubjectsState>} />          
+          
 
         </Routes>
       </Router>

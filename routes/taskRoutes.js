@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express();
-const { addTask, deleteTask, editTask, seeTasks, seeOneTask} = require("../controllers/taskControllers");
+const { addTask, deleteTask, editTask, seeTasks, seeOneTask, tasksDetails, editOneTask} = require("../controllers/taskControllers");
 app.post("/addTask", addTask);
 app.delete("/deleteTask", deleteTask);
-app.put("/editTask", editTask);
-app.get("/seeTasks/:idSECTION", seeTasks);
-app.get("/seeOneTasks", seeOneTask);
-
-
+app.put("/editTask1/", editTask);
+app.get("/seeTasks/:idSECTION", seeTasks); 
+app.get("/seeTask/:idTask", tasksDetails); 
+app.put("/editTheTask/:idTask", editOneTask);
 
 module.exports = app;

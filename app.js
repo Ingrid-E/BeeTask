@@ -19,6 +19,7 @@ app.use(require("./routes/loginRoutes"));
 app.use(require("./routes/subjectRoutes"));
 app.use(require("./routes/sectionRoutes"));
 app.use(require("./routes/taskRoutes"));
+app.use(require("./routes/calcuRoutes"));
 
 //manejador de errores
 app.use((err,req,res,next)=>{
