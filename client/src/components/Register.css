@@ -19,6 +19,7 @@
     display: flex;
     flex-flow: column;
     row-gap: 50px;
+    align-items: center;
 }
 
 .register-form .form-fields{
@@ -69,3 +70,15 @@
     font-weight: bold;
 }
 
+@media (max-width: 575.98px) {
+    .register-form ,  .register-form  .form-fields{
+        width: 80vw;
+    }
+
+    .register-form  h1{
+        font-size: 2.6rem;
+    }
+    .register-form span {
+        font-size: 1rem;
+    }
+}

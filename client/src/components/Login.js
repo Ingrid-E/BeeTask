@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./components.css";
 import "./Login.css";
 import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 import {post} from "../hooks/Hooks"
 
 function Login() {
@@ -61,8 +61,10 @@ function Login() {
             fullWidth
           />
         </div>
-
-        <button type="submit">Entrar</button>
+        <Button
+        variant="contained"
+        type="submit"
+        >Iniciar Sesion</Button>
       </form>
       <span className="noTieneCuenta">
         No tienes cuenta aun?<a href="Register">Registrate</a>

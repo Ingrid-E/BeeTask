@@ -140,6 +140,14 @@
     transform: translateY(6vh) scaleX(-1);
 }
 
+@media (max-width: 575.98px) {
+    .register__container{
+        margin: 1vh 0;
+    }
+}
+
+
+
 @media (max-width: 1000px) {
     .login, .register {
         background-color: #FFCE70;

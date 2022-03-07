@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +7,19 @@
 :root {
     --main-color: #FEE69F;
 }
+
+form .MuiButton-contained{
+    font-family: 'Quicksand';
+    font-size: 30px;
+    border-radius: 50px;
+    background: var(--main-color);
+    font-weight: 800;
+}
+
+button:focus {
+    background-color:#ffefbf!important;
+}
+
 
 .yellow-button {
     background-color: var(--main-color);

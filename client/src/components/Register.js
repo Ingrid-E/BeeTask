@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { post } from "../hooks/Hooks";
 import "./Register.css"
+import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 function Register() {
   const navigate = useNavigate();
@@ -42,8 +43,14 @@ function Register() {
     try {
       const resData = await post("register", user);
       console.log(resData);
+      navigate("/login");
     } catch (error) {
-      console.log("Error en la BD: ", error.message);
+      if (error.response.status === 406) {
+        console.error(error.response);
+        console.log("Email ya en uso")
+      } else if (error.response.status === 500) {
+        console.error(error.response);
+      }
     }
   };
 
@@ -65,7 +72,6 @@ function Register() {
       );
     } else {
       registerUser();
-      navigate("/login");
     }
   };
 
@@ -117,8 +123,10 @@ function Register() {
             fullWidth
           />
         </div>
-
-        <button type="submit">Listo</button>
+        <Button
+        variant="contained"
+        type="submit"
+        >Registrarse</Button>
       </form>
       <span className="noTieneCuenta">
         Ya tienes una cuenta?<a href="Login">Inicia Sesión</a>
