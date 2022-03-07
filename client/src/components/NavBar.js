@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/Images/BeeTask.svg";
 import "./components.css";
 import "./hamburger.css";
+import "./NavBar.css";
 function NavBar() {
   const [menu, setMenu] = useState(false);
   return (

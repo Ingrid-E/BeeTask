@@ -12,6 +12,7 @@ import ImageInstagram from '../assets/Images/home-media/home-icons/Instagram-ico
 import ImageTwitter from '../assets/Images/home-media/home-icons/Twitter-icon.png';
 import Image7 from '../assets/Images/Bee.png';
 import "./pages.css";
+import "./Home.css";
 
 function Home() {
   return (
