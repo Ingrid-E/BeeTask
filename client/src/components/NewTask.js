@@ -31,8 +31,6 @@ function NewTask(props){
     },[task, dateTime])
 
       const handleTask = async (e) =>{
-          console.log("noseeeeeeee");
-        console.log("namein: ", e.target.name, "idsectionn: ", e.target.value)
         setTask({...task, [e.target.name]:e.target.value} )
     };
 

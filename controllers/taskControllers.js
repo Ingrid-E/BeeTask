@@ -36,9 +36,9 @@ const editOneTask = async(req, res, next)=>{
         console.log("pasa por aqui");
     const {idTask} = req.params;
     console.log("el id: ", idTask);
-    const {name, description, grade} = req.body;
+    const {name, description, grade, datetime} = req.body;
     console.log("body: ",name, description, grade )
-    await pool.query("UPDATE TASK SET name = $1, description = $2, grade = $3 WHERE idtask = $4;", [name, description, grade, idTask]);
+    await pool.query("UPDATE TASK SET name = $1, description = $2, grade = $3, datetime = $4 WHERE idtask = $5;", [name, description, grade, datetime, idTask]);
     res.status(200).json("subject edited");
     } catch (error) {
      next(error);   
