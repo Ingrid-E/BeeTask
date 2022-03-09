@@ -8,7 +8,7 @@ function TaskForm(){
     const idSUBJECT = params.idSUBJECT;
     const userid = params.userid;
 
-    let [task, setTask] = useState({
+    const [task, setTask] = useState({
         name: '',
         description: '',
         datetime:'',
@@ -27,10 +27,14 @@ function TaskForm(){
     useEffect(()=>{
         getTask(idtask);    
     },[])
-
+        let myDate;
+        let my12FormatHour;
         const getTask = async (id) =>{
             const gettingtask = await fetch("http://localhost:5000/seeTask/"+id);
             const datatask = await gettingtask.json();
+
+            myDate = new Date(datatask.datetime);
+            my12FormatHour = HoursConverter24FormatTo12Format(myDate.getHours(), myDate.getMinutes())
             setTask(datatask);
                     }
         
@@ -85,7 +89,6 @@ function TaskForm(){
 
     }
 
-    const myDate = new Date(task.datetime);
 
     const HoursConverter24FormatTo12Format = (hour24Format, aMinute) =>{
 
@@ -115,13 +118,13 @@ function TaskForm(){
         return hour12Format;
     }
     
-    const my12FormatHour = HoursConverter12FormatTo24Format(myDate.getHours(), myDate.getMinutes())
     
     return (
      
         <>
         <form onSubmit={editTask}>
         <h1>Actualizar Tarea</h1>
+        {console.log("cuak",myDate)}
                 <label htmlFor="name">Titulo</label>
                 <input type="text" name="name" defaultValue={task.name} onChange={handleTask}/><br></br>
                 <label htmlFor="description">Descripcion</label>
@@ -130,18 +133,18 @@ function TaskForm(){
                 <input type="number" name="grade" defaultValue={task.grade} min="0.00" max="5.00" step="0.01" onChange={handleTask}/><br></br>
                 <h3>Fecha</h3>
                 <label htmlFor="day">Dia</label>
-                <input type="text" name="day" defaultValue={myDate.getDate()} onChange={handleDate}/>
+                <input type="text" name="day"  onChange={handleDate}/>
                 <label htmlFor="month">Mes</label>
-                <input type="text" name="month" defaultValue={myDate.getMonth()+1} onChange={handleDate}/>
+                <input type="text" name="month" onChange={handleDate}/>
                 <label htmlFor="year">Año</label>
-                <input type="text" name="year" defaultValue={myDate.getFullYear()} onChange={handleDate}/>
+                <input type="text" name="year" onChange={handleDate}/>
                 <h3>Hora</h3>
                 <label htmlFor="hours">Horas</label>
-                <input type="hours" name="hours" defaultValue={my12FormatHour.hour} onChange={handleDate}/>
+                <input type="hours" name="hours" onChange={handleDate}/>
                 <label htmlFor="minutes">Minutos</label>
-                <input type="minutes" name="minutes" defaultValue={my12FormatHour.minutes} onChange={handleDate}/>
+                <input type="minutes" name="minutes" onChange={handleDate}/>
                 <label htmlFor="am_pm">AM/PM</label>
-                <input type="text" name="am_pm" defaultValue={my12FormatHour.amOrPm} onChange={handleDate}/>
+                <input type="text" name="am_pm" onChange={handleDate}/>
         
         <button type='submit'>Actualizar Tarea +</button>
         </form>
