@@ -12,8 +12,8 @@ const addSection = async(req, res, next)=>{
 
 const deleteSection = async(req, res, next)=>{
     try {
-    const {idSECTION} = req.body;
-    await pool.query("DELETE FROM SECTION WHERE idSECTION = $1;", [idSECTION]);
+    const {idsection} = req.params;
+    await pool.query("DELETE FROM SECTION WHERE idSECTION = $1;", [idsection]);
     res.status(200).json("section deleted");
     } catch (error) {
      next(error);   
@@ -43,5 +43,15 @@ const seeSections = async(req, res, next)=>{
     }
 }
 
+const seeOneSection = async(req, res, next)=>{
+    try {
+    const {idsection} = req.params;
+    const response = await pool.query("SELECT sectionName, gradePercentage FROM SECTION WHERE idsection = $1;", [idsection]);
+    res.status(200).json(response.rows[0]);
+    } catch (error) {
+     next(error);   
+    }
+}
 
-module.exports = {addSection, deleteSection, editSection, seeSections};
+
+module.exports = {addSection, deleteSection, editSection, seeSections, seeOneSection};

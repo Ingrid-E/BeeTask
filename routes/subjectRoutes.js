@@ -4,7 +4,7 @@ const { addSubject, deleteSubject, editSubject, seeOneSubject, seeSubjects } = r
 
 
 app.post("/addSubject", addSubject);
-app.delete("/deleteSubject", deleteSubject );
+app.delete("/deleteSubject/:idsubject", deleteSubject );
 app.put("/editSubject", editSubject);
 app.get("/seeSubjects/:userid", seeSubjects );
 app.get("/seeOneSubject", seeOneSubject);

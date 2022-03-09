@@ -12,8 +12,8 @@ const addSubject = async(req, res, next)=>{
 
 const deleteSubject = async(req, res, next)=>{
     try {
-    const {idsubject, userid} = req.body;
-    await pool.query("DELETE FROM SUBJECT WHERE idsubject = $1 AND userid = $2;", [idsubject, userid]);
+    const {idsubject} = req.params;
+    await pool.query("DELETE FROM SUBJECT WHERE idsubject = $1;", [idsubject]);
     res.status(200).json("subject deleted");
     } catch (error) {
      next(error);   

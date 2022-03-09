@@ -8,6 +8,7 @@ import Sections from "./components/Sections";
 import SubjectsState from "./context/Subjects/SubjectsState"
 import TaskForm from "./components/TaskForm";
 import EditSection from "./components/EditSection";
+import TaskDetails from "./components/TaskDetails";
 
 function App(){
 
@@ -19,12 +20,12 @@ function App(){
           <Route path='/register'element={<Register/>} />
           <Route path='/login'element={<Login/>} />
           <Route path='/menu/:userid'element={<Menu/>} />
-          <Route path='/task/:taskid'element={<TaskForm/>} />
-          <Route path='/section/:sectionId'element={<EditSection/>} />
+          <Route path='/task/:userid/:idSUBJECT/:taskid'element={<TaskForm/>} />
+          <Route path='/section/:userid/:idSUBJECT/:sectionId'element={<EditSection/>} />
           <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState> 
             <Sections/>
             </SubjectsState>} />          
-          
+          <Route path='/taskDetails/:userid/:idSUBJECT/:taskid' element={<TaskDetails/>}/>
 
         </Routes>
       </Router>

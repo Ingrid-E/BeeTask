@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState  } from 'react';
+import React, { useEffect, useContext, useState, Fragment  } from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import Tasks from './Tasks';
 import SubjectsContext from '../context/Subjects/SubjectsContext';
@@ -31,6 +31,20 @@ function Sections(){
         const handleButton = () =>{
             navigate("/menu/"+userid);
         }
+
+        const deleteSection = async (id) => {
+            try {
+                const response = await fetch("http://localhost:5000/deleteSection/"+id, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },                })
+                const dataresponse = await response.json();
+                console.log(dataresponse);
+            } catch (error) {
+                console.log(error)
+            }
+        }
     
         loadTask();
 
@@ -44,11 +58,17 @@ function Sections(){
         {
         subjectsContext.sections.length > 0
             ? subjectsContext.sections.map((aSection)=>(
-                <>
-                <h2>{aSection.sectionname} {aSection.gradepercentage}%</h2>
-                <button onClick={() => navigate("/section/"+aSection.idsection)}>editar</button>
-                <Tasks idSECTION = {aSection.idsection}/>
-                </>
+                
+               <div key={`${aSection.idsection}`}>
+               <h2>{aSection.sectionname} {aSection.gradepercentage}%</h2>
+                <button onClick={() => navigate(`/section/${userid}/${idSUBJECT}/${aSection.idsection}`)}>editar</button>
+                <button onClick={() => deleteSection(aSection.idsection)}>Eliminar</button>
+
+                <Tasks userid = {userid} idSUBJECT = {idSUBJECT}  idSECTION = {aSection.idsection}/>
+
+               </div>
+
+                
             )
             )
         : (<h1>Aun no tienes secciones, prueba a crear una.</h1>)

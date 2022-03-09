@@ -12,8 +12,8 @@ const addTask = async(req, res, next)=>{
 
 const deleteTask = async(req, res, next)=>{
     try {
-    const {idTASK} = req.body;
-    await pool.query("DELETE FROM TASK WHERE idTASK = $1;", [idTASK]);
+    const {idtask} = req.params;
+    await pool.query("DELETE FROM TASK WHERE idTASK = $1;", [idtask]);
     res.status(200).json("task deleted");
     } catch (error) {
      next(error);   
@@ -56,20 +56,11 @@ const seeTasks = async(req, res, next)=>{
     }
 }
 
-const tasksDetails = async(req, res, next)=>{
-    try {
-    const {idTask} = req.params;
-    const response = await pool.query("SELECT name, description, grade FROM TASK WHERE idtask = $1;", [idTask]);
-    res.status(200).json(response.rows);
-    } catch (error) {
-     next(error);   
-    }
-}
 
 const seeOneTask = async(req, res, next)=>{
     try {
-    const {idTASK} = req.body;
-    const response = await pool.query("SELECT name, description, datetime, priority, grade FROM TASK WHERE idTASK = $1;", [idTASK]);
+    const {idTask} = req.params;
+    const response = await pool.query("SELECT name, description, datetime, priority, grade FROM TASK WHERE idTASK = $1;", [idTask]);
     if(response.rowCount === 0){
         res.status(404).json({message:`The task with the idTASK: ${idTASK} not exists`});
     }
@@ -80,4 +71,4 @@ const seeOneTask = async(req, res, next)=>{
 }
 
 
-module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, tasksDetails, editOneTask};
+module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, editOneTask};
