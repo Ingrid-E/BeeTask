@@ -4,6 +4,7 @@ import { post } from "../hooks/Hooks";
 import "./Register.css"
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
+import { ReactComponent as Logo } from "../assets/Images/BeeTask.svg";
 function Register() {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -77,51 +78,63 @@ function Register() {
 
   return (
     <div className="register-form">
-      <h1>Registrate</h1>
+      <div className="register-form__title">
+      <Logo/>
+      <h1>Registrarse</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="form-fields">
-        <TextField
+          <div>
+            <h2>Correo</h2>
+            <TextField
             value={user.email}
-            variant="filled"
+            variant="outlined"
             onChange={handleChange}
             size="small"
-            label="Correo"
             name="email"
             error = {!validateFormData(user.email, "email") && user.email !== ""}
             helperText = "Ejemplo@correo.com"
             fullWidth
           />
-        <TextField
+          </div>
+          <div>
+            <h2>Nombre</h2>
+            <TextField
             value={user.names}
-            variant="filled"
+            variant="outlined"
             onChange={handleChange}
             size="small"
-            label="Nombre"
             name="names"
             error = {!validateFormData(user.names, "name") && user.names !== ""}
             fullWidth
           />
-          <TextField
+          </div>
+          <div>
+            <h2>Apellidos</h2>
+            <TextField
             value={user.surnames}
-            variant="filled"
+            variant="outlined"
             onChange={handleChange}
             size="small"
-            label="Apellidos"
             name="surnames"
             error = {!validateFormData(user.surnames, "name") && user.surnames !== ""}
             fullWidth
           />
-          <TextField
+          </div>
+          <div>
+            <h2>Contraseña</h2>
+            <TextField
             value={user.password}
-            variant="filled"
+            variant="outlined"
             onChange={handleChange}
             size="small"
-            label="Contraseña"
             name="password"
+            type="password"
             error = {!validateFormData(user.password, "password") && user.password!== ""}
             helperText = "Debe tener al menos 5 caracteres, mayusculas, numeros y caracteres especiales."
             fullWidth
           />
+          </div>
         </div>
         <Button
         variant="contained"

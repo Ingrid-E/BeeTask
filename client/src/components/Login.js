@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ReactComponent as Logo } from "../assets/Images/BeeTask.svg";
 import "./Login.css";
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -38,28 +39,36 @@ function Login() {
 
   return (
     <div className="login-form">
+      <div className="login-form__title">
+      <Logo/>
       <h1>Iniciar Sesión</h1>
+      </div>
+
       <form onSubmit={handleSubmit}>
         <div className="form-fields">
+          <div>
+          <h2>Usuario</h2>
         <TextField
             value={user.email}
-            variant="filled"
+            variant="outlined"
             onChange={handleChange}
             size="small"
-            label="Correo"
             name="email"
             fullWidth
           />
+          </div>
+          <div>
+          <h2>Contraseña</h2>
           <TextField
             value={user.password}
-            variant="filled"
+            variant="outlined"
             onChange={handleChange}
             size="small"
             type="password"
-            label="Constraseña"
             name="password"
             fullWidth
           />
+          </div>
         </div>
         <Button
         variant="contained"

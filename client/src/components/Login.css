@@ -1,7 +1,7 @@
 @import url('./components.css');
 
 .login-form {
-    width: 40vw;
+    width: 25vw;
     height: auto;
     position: absolute;
     z-index: 100;
@@ -12,8 +12,20 @@
     row-gap: 35px;
 }
 
-.login-form h1{
-    font-size: 50px;
+.login-form__title {
+    display: flex;
+    width: 25vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form__title svg {
+    width: 3rem;
+}
+
+.login-form__title h1{
+    margin-left: 2vw;
+    font-size: 3.5rem;
     font-weight: bold;
 }
 
@@ -25,7 +37,6 @@
 }
 
 .login-form .form-fields{
-    width: 40vw;
     display: flex;
     align-items: center;
     flex-flow: column;
@@ -41,6 +52,17 @@
 .login-form .form-fields input{
     font-size: 20px;
     margin-left: 25px;
+}
+
+.form-fields div {
+    width: 25vw;
+}
+
+.form-fields h2 {
+    align-self: flex-start;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5vh;
 }
 
 .MuiFilledInput-root {

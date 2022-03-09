@@ -1,5 +1,5 @@
 .register-form {
-    width: 40vw;
+    width: 25vw;
     height: auto;
     position: absolute;
     z-index: 100;
@@ -10,20 +10,32 @@
     row-gap: 35px;
 }
 
-.register-form h1{
-    font-size: 50px;
+.register-form__title {
+    display: flex;
+    width: 25vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form__title svg {
+    width: 3rem;
+}
+
+.register-form__title h1{
+    margin-left: 2vw;
+    font-size: 3.5rem;
     font-weight: bold;
 }
+
 
 .register-form form {
     display: flex;
     flex-flow: column;
-    row-gap: 50px;
     align-items: center;
 }
 
 .register-form .form-fields{
-    width: 40vw;
+    width: 25vw;
     display: flex;
     flex-flow: column;
     row-gap: 30px;
@@ -40,9 +52,18 @@
     margin-left: 25px;
 }
 
-.MuiFilledInput-root {
-    background: white!important;
+.form-fields div {
+    width: 25vw;
 }
+
+.form-fields h2 {
+    align-self: flex-start;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5vh;
+}
+
+
 .MuiFormHelperText-contained {
     margin-left: 0!important;
 }
@@ -71,14 +92,17 @@
 }
 
 @media (max-width: 575.98px) {
-    .register-form ,  .register-form  .form-fields{
-        width: 80vw;
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 70vw;
     }
-
+    .register-form__title svg {
+        width: 30px;
+    }
     .register-form  h1{
         font-size: 2.6rem;
     }
     .register-form span {
         font-size: 1rem;
     }
+
 }
