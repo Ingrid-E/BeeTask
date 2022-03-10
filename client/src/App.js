@@ -22,9 +22,9 @@ function App(){
           <Route path='/menu/:userid'element={<Menu/>} />
           <Route path='/task/:userid/:idSUBJECT/:taskid'element={<TaskForm/>} />
           <Route path='/section/:userid/:idSUBJECT/:sectionId'element={<EditSection/>} />
-          <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState> 
+          <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState>
             <Sections/>
-            </SubjectsState>} />          
+            </SubjectsState>} />
           <Route path='/taskDetails/:userid/:idSUBJECT/:taskid' element={<TaskDetails/>}/>
 
         </Routes>
