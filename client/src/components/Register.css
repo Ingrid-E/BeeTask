@@ -1,0 +1,159 @@
+.register-form {
+    width: 25vw;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    row-gap: 35px;
+}
+
+.register-form__title {
+    display: flex;
+    width: 25vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form__title svg {
+    width: 3rem;
+}
+
+.register-form__title h1{
+    margin-left: 2vw;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+
+.register-form form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.register-form .form-fields{
+    width: 25vw;
+    display: flex;
+    flex-flow: column;
+    row-gap: 30px;
+    overflow-x: hidden;
+}
+
+.register-form .form-fields label{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.register-form .form-fields input{
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.form-fields div {
+    width: 25vw;
+}
+
+.form-fields h2 {
+    align-self: flex-start;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5vh;
+}
+
+
+.MuiFormHelperText-contained {
+    margin-left: 0!important;
+}
+
+.register-form .form-fields div {
+    display: flex;
+    flex-flow: column;
+}
+
+.register-form button {
+    font-family: 'Quicksand';
+    font-size: 30px;
+    border-radius: 50px;
+    background: var(--main-color);
+    font-weight: 500;
+}
+.register-form span {
+    font-size: 20px;
+}
+
+.register-form span a {
+    text-decoration: none;
+    margin: 0px 10px;
+    color: #E0A025;
+    font-weight: bold;
+}
+
+@media (max-width: 575.98px) {
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 80vw;
+    }
+    .register-form__title svg {
+        width: 30px;
+    }
+    .register-form  h1{
+        font-size: 2.6rem;
+    }
+    .register-form span {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 991.98px) {
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 55vw;
+    }
+    .register-form  h1{
+        font-size: 3rem;
+    }
+    .register-form__title svg {
+        width: 30px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 35vw;
+        row-gap: 5px;
+    }
+    .register-form h1{
+        font-size: 2.2rem;
+    }
+    .register-form__title svg {
+        width: 30px;
+    }
+
+    .form-fields h2 {
+        font-size: 1.5rem;
+    }
+    .register-form span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1366px) { 
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 50vw;
+        row-gap: 15px;
+    }
+    .register-form h1{
+        font-size: 4rem;
+    }
+    .form-fields h2 {
+        font-size: 2rem;
+    }
+    .form-fields p {
+        font-size: 1rem;
+    }
+    .register-form span {
+        font-size: 25px;
+    }
+}

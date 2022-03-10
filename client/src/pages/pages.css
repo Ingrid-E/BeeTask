@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+:root {
+    --main-color: #FEE69F;
+}
+
+.yellow-button {
+    font-size: 1.7em;
+    transition: .3s ease-in-out;
+}
+
+.yellow-button:hover {
+    transform: scale(1.1);
+}

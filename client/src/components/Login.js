@@ -1,64 +1,85 @@
-import React, { useState, useEffect  } from 'react';
-import {useNavigate} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ReactComponent as Logo } from "../assets/Images/BeeTask.svg";
+import "./Login.css";
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import {post} from "../hooks/Hooks"
 
+function Login() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
-function Login(){
-    const navigate = useNavigate();
-    const [user, setUser] = useState({
-        email: "",
-        password: ""
-      });
+  useEffect(() => {}, [user]);
 
+  const handleChange = async (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
-      useEffect(()=>{
-    
-      
-        },[user])
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    fetchUser(user);
+  };
 
-      const handleChange = async (e) =>{
-        setUser({...user, [e.target.name]:e.target.value} )
-    };
-
-    const handleSubmit = async (e)=>{
-        e.preventDefault();
-            const res = await fetch("http://localhost:5000/login",{
-            method: "POST",
-            body: JSON.stringify(user),
-            headers: {"Content-Type": "application/json"}
-        });
-        const resData = await res.json();
-        if(resData.message === 'The email typed is not registered'){
-            console.log("El email ingresado aun no ha sido registrado");
-        }else if(resData.message === 'password is incorrect'){
-            console.log("Contraseña incorrecta");
-        }else{
-            console.log("logeado el user con id:"+resData);
-            navigate("/menu/"+resData);
-        }
-    
- 
+  async function fetchUser(login) {
+    try {
+      const response = await post(`login`, login);
+      console.log(response)
+    } catch (error) {
+      if (error.response.status === 404) {
+        console.log("El usuario no existe")
+      } else if (error.response.status === 500) {
+        console.error(error.response);
+      }
     }
+  }
 
-    return (
-        <>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="email">email</label>
-        <input type="email" name="email" onChange={handleChange}/>
-        <label htmlFor="password">password</label>
-        <input type="password" name="password" onChange={handleChange}/>
-        <div >
+  return (
+    <div className="login-form">
+      <div className="login-form__title">
+      <Logo/>
+      <h1>Iniciar Sesión</h1>
+      </div>
 
+      <form onSubmit={handleSubmit}>
+        <div className="form-fields">
+          <div>
+          <h2>Usuario</h2>
+        <TextField
+            value={user.email}
+            variant="outlined"
+            onChange={handleChange}
+            size="small"
+            name="email"
+            fullWidth
+          />
+          </div>
+          <div>
+          <h2>Contraseña</h2>
+          <TextField
+            value={user.password}
+            variant="outlined"
+            onChange={handleChange}
+            size="small"
+            type="password"
+            name="password"
+            fullWidth
+          />
+          </div>
         </div>
-        <button type='submit'>Submit!</button>
-        </form>
-        
-        
-        </>
-
-
-    )
-
+        <Button
+        variant="contained"
+        type="submit"
+        >Iniciar Sesion</Button>
+      </form>
+      <span className="noTieneCuenta">
+        No tienes cuenta aun?<a href="Register">Registrate</a>
+      </span>
+    </div>
+  );
 }
 
 export default Login;
