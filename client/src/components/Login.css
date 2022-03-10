@@ -102,3 +102,43 @@
         font-size: 1.3rem;
     }
 }
+
+@media (max-width: 991.98px) {
+    .login-form, .login-form .form-fields, .login-form__title, .form-fields div{
+        width: 55vw;
+    }
+    .login-form h1{
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .login-form, .login-form .form-fields, .login-form__title, .form-fields div{
+        width: 60vw;
+    }
+    .login-form h1{
+        font-size: 2.5rem;
+    }
+    .login-form__title svg {
+        width: 35px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .login-form, .login-form .form-fields, .login-form__title, .form-fields div{
+        width: 50vw;
+        row-gap: 15px;
+    }
+    .login-form h1{
+        font-size: 4rem;
+    }
+    .login-fields h2 {
+        font-size: 2rem;
+    }
+    .login-fields p {
+        font-size: 1rem;
+    }
+    .login-form span {
+        font-size: 25px;
+    }
+}

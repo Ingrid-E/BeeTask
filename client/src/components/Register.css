@@ -93,7 +93,7 @@
 
 @media (max-width: 575.98px) {
     .register-form ,  .register-form .form-fields, .form-fields div{
-        width: 70vw;
+        width: 80vw;
     }
     .register-form__title svg {
         width: 30px;
@@ -105,4 +105,55 @@
         font-size: 1rem;
     }
 
+}
+
+@media (max-width: 991.98px) {
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 55vw;
+    }
+    .register-form  h1{
+        font-size: 3rem;
+    }
+    .register-form__title svg {
+        width: 30px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 35vw;
+        row-gap: 5px;
+    }
+    .register-form h1{
+        font-size: 2.2rem;
+    }
+    .register-form__title svg {
+        width: 30px;
+    }
+
+    .form-fields h2 {
+        font-size: 1.5rem;
+    }
+    .register-form span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1366px) { 
+    .register-form ,  .register-form .form-fields, .form-fields div{
+        width: 50vw;
+        row-gap: 15px;
+    }
+    .register-form h1{
+        font-size: 4rem;
+    }
+    .form-fields h2 {
+        font-size: 2rem;
+    }
+    .form-fields p {
+        font-size: 1rem;
+    }
+    .register-form span {
+        font-size: 25px;
+    }
 }

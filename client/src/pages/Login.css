@@ -78,7 +78,7 @@
 }
 .register__container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -141,21 +141,41 @@
 }
 
 @media (max-width: 575.98px) {
+    .login__container, .register__container {
+        background-color: white;
+    }
     .register__container{
-        margin: 1vh 0;
+        height: 115vh;
+    }
+    .login__container-background , .register__container-background {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .login__container, .register__container {
+        background-color: white;
+    }
+    .login__container-background , .register__container-background {
+        display: none;
+    }
+}
+
+@media (max-width: 1366px) {
+    .register .register__hexagons-container:nth-child(1){
+        right: -55%;
+        top: -15%;
+    }
+    .register .register__hexagons-container:nth-child(2){
+        left: -55%;
+        top: -15%;
+    }
+    .login__container, .register__container {
+        background-color: white;
+    }
+    .login__container-background , .register__container-background {
+        display: none;
     }
 }
 
 
-
-@media (max-width: 1000px) {
-    .login, .register {
-        background-color: #FFCE70;
-    }
-    .login__hexagons-container:nth-child(1) {
-        display: none;
-    }
-    .login__hexagons-container:nth-child(2) {
-        display: none;
-    }
-}
