@@ -30,7 +30,7 @@ function Login() {
       if(response.status === 200){
         try{
           const data = await get(`login/${user.email}`, login);
-          navigate(`/menu/${data.userid}`);
+          navigate("/menu", {state: data});
         }catch(error){
           if (error.response.status === 404) {
             console.log("El usuario no existe")

@@ -1,26 +1,19 @@
 import React from 'react';
 import NewTask from './NewTask';
 import NewSubject from './NewSubject';
-import {useNavigate, useParams} from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import SeeSubjects from './SeeSubjects';
-import NewSection from './NewSection';
 import SubjectsState from '../context/Subjects/SubjectsState';
-function Menu(){
-    const params = useParams();
-    const userid = params.userid;
-
+function Menu() {
+    const {userid} = useLocation().state;
     return (
-     
-     <>
-     <h1>Menu</h1>
-<SubjectsState>
-<NewTask userid={userid}/>
-<SeeSubjects userid={userid}/>
-</SubjectsState>
-
-<NewSubject userid={userid}/>
-        
-        
+        <>
+            <h1>Menu</h1>
+            <SubjectsState>
+                <NewTask userid={userid} />
+                <SeeSubjects userid={userid} />
+            </SubjectsState>
+            <NewSubject userid={userid} />
         </>
 
 
