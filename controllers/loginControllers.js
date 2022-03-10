@@ -8,7 +8,7 @@ const registerUser = async(req, res, next)=>{
     await pool.query("INSERT INTO USERS (email, password, names, surnames) VALUES ($1, $2, $3, $4)", [email, hash, names, surnames]);
     res.status(200).json("User created");
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 
@@ -28,7 +28,7 @@ const loginUser = async(req, res, next)=>{
     }
     res.status(200).json("User logged");
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 
@@ -40,9 +40,25 @@ const seeUser = async(req, res, next) =>{
             res.status(404).json({message:"The userId is not valid"});
         }
     } catch (error) {
-        next(error);   
+        next(error);
 
     }
 }
 
-module.exports = {registerUser, loginUser, seeUser};
+const getUser = async(req, res, next) =>{
+    try {
+        const {email} = req.params;
+        console.log("Email: " + email)
+        const response = await pool.query("SELECT userid FROM USERS WHERE email=$1", [email]);
+        if(response.rowCount === 0){
+            res.status(404).json({message:"The email is not valid"});
+        }else{
+            return res.status(200).json(response.rows[0])
+        }
+    } catch (error) {
+        next(error);
+
+    }
+}
+
+module.exports = {registerUser, loginUser, seeUser, getUser};

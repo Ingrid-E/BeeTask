@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "../assets/Images/BeeTask.svg";
 import "./Login.css";
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import {post} from "../hooks/Hooks"
+import {post, get} from "../hooks/Hooks"
 
 function Login() {
   const navigate = useNavigate();
@@ -27,6 +27,18 @@ function Login() {
   async function fetchUser(login) {
     try {
       const response = await post(`login`, login);
+      if(response.status === 200){
+        try{
+          const data = await get(`login/${user.email}`, login);
+          navigate(`/menu/${data.userid}`);
+        }catch(error){
+          if (error.response.status === 404) {
+            console.log("El usuario no existe")
+          } else if (error.response.status === 500) {
+            console.error(error.response);
+          }
+        }
+      }
       console.log(response)
     } catch (error) {
       if (error.response.status === 404) {

@@ -51,8 +51,8 @@ function TaskForm(){
 
       const HoursConverter12FormatTo24Format = (hour12Format, aMinute, amOrPm) =>{
         let hour24Format = 0;
-        if(amOrPm == 'AM'){
-            if(hour12Format == 12){
+        if(amOrPm === 'AM'){
+            if(hour12Format === 12){
                 hour24Format = 0;
             }else{
                 hour24Format = hour12Format;
@@ -60,7 +60,7 @@ function TaskForm(){
         }
 
         if(amOrPm=== 'PM'){
-            if(hour12Format == 12){
+            if(hour12Format === 12){
 
                 hour24Format = hour12Format;
             }else{
@@ -99,7 +99,7 @@ function TaskForm(){
         };
         if(hour24Format < 12){
             hour12Format.amOrPm = 'AM';
-            if(hour24Format == 0){
+            if(hour24Format === 0){
                hour12Format.hour = 12;
             }else{
                 hour12Format.hour = hour24Format;
@@ -108,7 +108,7 @@ function TaskForm(){
 
         if(hour24Format >= 12){
             hour12Format.amOrPm = 'PM';
-            if(hour24Format == 12){
+            if(hour24Format === 12){
                 hour12Format.hour = 12;
             }else{
                 hour12Format.hour = parseInt(hour24Format)-12;
