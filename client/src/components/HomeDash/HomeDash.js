@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import ImageBee from "../../assets/Images/Bee.png";
 import ImageHexagons from "../../assets/Images/Hexagons-dashboard.png";
+import ImageHexagon from "../../assets/Images/Hexagon-Courses.png";
 import Calendar from "../Calendar/Calendar";
 import "./HomeDash.css";
 
@@ -10,7 +11,7 @@ function HomeDash({ userid }) {
 
   useEffect(() => {
     getSubjects();
-  }, [subjects]);
+  }, []);
 
   const getSubjects = async () => {
     try {
@@ -88,7 +89,7 @@ function HomeDash({ userid }) {
                   {subjects.map((aSubject) => (
                     <>
                       <div className="course">
-                        <div className="hexagon"></div>
+                      <img className="hexagon-course" src={ImageHexagon} alt="hexagon-course.png"></img>
                         <h1>{aSubject.subjectname}</h1>
                       </div>
                     </>
