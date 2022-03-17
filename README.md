@@ -75,6 +75,16 @@ En client/src se tienen las siguientes carpetas:
 KIOasjkdg
 
 # Información de la app 🌷🐝
-## 1. ¿Que es beetask?
 
+## 1. ¿Que es beetask?
 Una aplicación web que permite tener varias herramientas de organización en una sola plataforma, fácil de encontrar y usar.
+
+## 2. Herramientas:
+- Crear un horario 
+- Calculadora de notas
+- Lista de tareas
+- Timer pomodoro
+- Calendario
+- Cuadernillo de notas
+- Login
+- Register
