@@ -74,7 +74,7 @@ En client/src se tienen las siguientes carpetas:
 
 KIOasjkdg
 
-# Información de la app 🍯
+# Información de la app 🌷🐝
 1. Proposito
 ```
 Facil
