@@ -1,6 +1,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import NavBar from "../components/NavBar";
+/*<<<<<<< HEAD
+import Image from '../assets/Images/placeholder.png'
+import Image1 from '../assets/Images/home-media/home-icons/clock.png'
+import Image2 from '../assets/Images/home-media/home-icons/calculator.png'
+import Image3 from '../assets/Images/home-media/home-icons/calendar.png'
+import Image4 from '../assets/Images/home-media/home-icons/flash-cards.png'
+import Image5 from '../assets/Images/home-media/home-icons/grade.png'
+import Image6 from '../assets/Images/home-media/home-icons/notepad.png'
+import "./Home.css";*/
+
+
+//=======
 import Image1 from '../assets/Images/home-media/home-icons/clock.png';
 import Image2 from '../assets/Images/home-media/home-icons/calculator.png';
 import Image3 from '../assets/Images/home-media/home-icons/calendar.png';
@@ -14,6 +26,7 @@ import Image7 from '../assets/Images/Bee.png';
 import "./pages.css";
 import "./Home.css";
 
+//>>>>>>> 11-Clean-Code
 function Home() {
   return (
     <div className="home">
@@ -75,12 +88,10 @@ function Home() {
             <p>Calcula tu nota en la materia y cuanto necesitas para pasar!</p>
           </div>
         </div>
-        <div className="home__section2-background">
-          <div className="hex hex-left"></div>
-          <div className="hex hex-right"></div>
-          <div className="bee bee-top"></div>
-          <div className="bee bee-down"></div>
-        </div>
+        <div className="hex hex-right"></div>
+        <div className="hex hex-left"></div>
+        <img className="bee" src={Image7}></img>
+        <img className="bee" src={Image7}></img>
       </div>
       <div className="home__info">
         <div className="home__info-content">
