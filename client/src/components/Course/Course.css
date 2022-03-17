@@ -4,6 +4,15 @@
     background-color: red;
 }
 
-.course .tasks_container {
-    
+.course .task_component {
+    background-color: #B7E8D5;
+    padding: 1vh 1vw;
+}
+
+.course .task_component h1 {
+    font-size: 1.5rem;
+}
+
+.task_component .task_container {
+    background-color: white;
 }

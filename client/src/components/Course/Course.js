@@ -34,8 +34,9 @@ function Course({idSubject}) {
                 <h1>{subject.subjectname}</h1>
                 <p>{subject.description}</p>
             </div>
-            <div className="tasks_container">
-
+            <div className="task_component">
+                <h1>Tareas</h1>
+                <div className="tasks_container"></div>
             </div>
         </div>
     )
