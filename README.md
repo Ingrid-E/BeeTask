@@ -1,7 +1,7 @@
 # BeeTask 🐝
 Aplicación para mejorar el rendimiento académico por medio de la organización.
 
-# Comenzar 🍯 [Entorno de desarrollo]
+# Comenzar 🍯💛 👾🤖(Entorno de desarrollo)🤖👾
 1. Clonar el repositorio
 ```
 git clone https://github.com/Ingrid-E/BeeTask.git
@@ -26,7 +26,7 @@ npm start
 Al hacer npm start en la carpeta api se inicia un servidor en el puerto 5000 y en client en el puerto 3000
 ```
 
-# Comenzar 🍯 [Entorno de producción]
+# Comenzar 👩🏼‍🌾🐝(Entorno de producción)👨🏼‍🌾🐝
 1. Ingresar al link de la app
 ```
 "link heroku"
