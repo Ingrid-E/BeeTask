@@ -75,7 +75,7 @@ En client/src se tienen las siguientes carpetas:
 KIOasjkdg
 
 # Información de la app 🌷🐝
-1. Proposito
+## 1. ¿Que es beetask?
 ```
 Facil
 ```
