@@ -10,6 +10,17 @@ const addTask = async(req, res, next)=>{
     }
 }
 
+const countTasks = async(req, res, next)=>{
+    try {
+    const {userid} = req.body;
+    const response = await pool.query("SELECT COUNT(idtask) AS tasksCounted FROM TASK t JOIN SECTION s ON t.idsection = s.idsection JOIN SUBJECT sub ON s.idsubject = sub.idsubject and sub.userid = $1;", [userid]);
+    res.status(200).json(response.rows[0]);
+    } catch (error) {
+     next(error);   
+    }
+}
+
+
 const deleteTask = async(req, res, next)=>{
     try {
     const {idtask} = req.params;
@@ -71,4 +82,4 @@ const seeOneTask = async(req, res, next)=>{
 }
 
 
-module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, editOneTask};
+module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, editOneTask, countTasks};

@@ -3,8 +3,17 @@ const pool = require("../db");
 const addSubject = async(req, res, next)=>{
     try {
     const {subjectName, description, userid} = req.body;
-    await pool.query("INSERT INTO SUBJECT (subjectName, description, userid) VALUES ($1, $2, $3);", [subjectName, description, userid]);
-    const response = await pool.query("SELECT idsubject FROM subject WHERE subjectName = $1 AND description = $2", [subjectName, description]);
+    const response = await pool.query("INSERT INTO SUBJECT (subjectName, description, userid) VALUES ($1, $2, $3) RETURNING idsubject;", [subjectName, description, userid]);
+    res.status(200).json(response.rows[0]);
+    } catch (error) {
+     next(error);
+    }
+}
+
+const countSubjects = async(req, res, next)=>{
+    try {
+    const {userid} = req.body;
+    const response = await pool.query("SELECT COUNT(idsubject) AS subjectsCounted FROM subject WHERE userid = $1;", [userid]);
     res.status(200).json(response.rows[0]);
     } catch (error) {
      next(error);
@@ -56,4 +65,4 @@ const seeOneSubject = async(req, res, next)=>{
 }
 
 
-module.exports = {addSubject, deleteSubject, editSubject, seeOneSubject, seeSubjects};
+module.exports = {addSubject, deleteSubject, editSubject, seeOneSubject, seeSubjects, countSubjects};
