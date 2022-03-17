@@ -1,0 +1,15 @@
+@import url('../components.css');
+
+.courses {
+    display: flex;
+    background-color: green;
+    width: calc(100vw - 10rem);
+    justify-content: center;
+    height: 100%;
+}
+
+.courses_container {
+    background-color: #F0CAC7;
+    width:  50vw;
+    height: 10vh;
+}

@@ -1,0 +1,5 @@
+@import url('../pages.css');
+.dashboard {
+    display: flex;
+    flex-direction: row;
+}

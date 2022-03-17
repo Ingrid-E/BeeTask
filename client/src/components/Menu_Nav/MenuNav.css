@@ -1,7 +1,8 @@
 @import url('../components.css');
 
-.dashboard {
+.MenuNav {
     display: flex;
+    flex-direction: column;
     background-color: #FEE69F;
     width: 10rem;
     height: 86vh;
@@ -9,28 +10,28 @@
     padding-top: 7vh;
 }
 
-.dashboard div {
+.MenuNav div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-.dashboard div svg {
-    width: 2.5rem;
-    height: 2.5rem;
+.MenuNav div svg {
+    width: 3rem;
+    height: 3rem;
 }
 
-.dashboard div *:hover {
+.MenuNav div *:hover {
     color: red;
 }
 
-.dashboard div img {
+.MenuNav div img {
     width: 3vw;
 }
 
-.dashboard div h1 {
-    font-size: 1.5rem;
+.MenuNav div h1 {
+    font-size: 1.3rem;
     margin-top: 20px;
     font-weight: 500;
 }

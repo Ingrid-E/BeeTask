@@ -14,14 +14,14 @@ function NewTask(props){
         priority: '',
         idSECTION: 0,
     });
-    
+
 
     const [dateTime, setDateTime] = useState({
         day: 0,
         month: 0,
         year: 0,
         hours: 0,
-        minutes: 0, 
+        minutes: 0,
         am_pm: ''
     });
 
@@ -35,7 +35,7 @@ function NewTask(props){
     };
 
     const handleDate = async(e) => {
-        
+
         setDateTime({...dateTime, [e.target.name]:e.target.value});
 
     };
@@ -101,15 +101,12 @@ function NewTask(props){
         });
         const resData = await res.json();
         console.log(resData);
-        if(!res.ok){ 
+        if(!res.ok){
             console.log("hubo un error al crear la tarea")
         }else{
-            
             console.log("tarea creada: ", task);
 
         }
-    
- 
     }
 
     const handleCourseSelect = (e) =>{
@@ -118,7 +115,6 @@ function NewTask(props){
         subjectsContext.getSubjects(userid);
     }
 
-   
 
 
     const handleSectionSelect = (e) =>{
@@ -132,7 +128,7 @@ function NewTask(props){
         console.log("it prints");
     }
     return (
-     
+
      <>
         <form onSubmit={createTask}>
         <h1>Nueva Tarea</h1>
@@ -186,8 +182,6 @@ function NewTask(props){
 
         <button type='submit'>Nueva Tarea +</button>
         </form>
-        
-        
         </>
 
 

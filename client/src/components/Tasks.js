@@ -6,7 +6,7 @@ function Tasks(props){
     const idSUBJECT = props.idSUBJECT;
     const navigate = useNavigate();
     const idSECTION = props.idSECTION;
-    
+
     const [tasks, setTasks] = useState([]);
 
       useEffect(()=>{
@@ -43,7 +43,6 @@ function Tasks(props){
         }
 
     return (
-     
      <>
         <h2>Mis tareas</h2>
         {
@@ -56,13 +55,10 @@ function Tasks(props){
                 </p>
                 </div>
 
-                
             )
             )
             :<h3>No tienes tareas en esta seccion</h3>
-        
-            
-        }        
+        }
         </>
 
 
