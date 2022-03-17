@@ -6,6 +6,7 @@ import NewSection from "../NewItem/NewSection";
 import "./Courses.css";
 
 function Courses({ userid }) {
+    console.log("azucar:", userid)
     const [state, setState] = useState(false)
     const [subjects, setSubjects] = useState([]);
 
