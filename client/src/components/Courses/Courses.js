@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Button from '@material-ui/core/Button'
 import AddIcon from '@mui/icons-material/Add';
 import NewSubject from "../NewItem/NewSubject";
-import NewSection from "../NewItem/NewSection";
 import "./Courses.css";
 import Course from "../Course/Course";
 
