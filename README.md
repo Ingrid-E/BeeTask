@@ -45,7 +45,8 @@ Restricciones: la contraseña debe tener al menos 8 caracteres, una mayuscula y 
 
 3. Acceder a la app y hacer uso de sus funcionalidades
 ```
-Para acceder a la app solo es necesario digitar el email y contraseña anteriormente creados, si el acceso es exitoso, el usuario vera la interfaz de menu principal y podra comenzar a hacer uso de la app
+Para acceder a la app solo es necesario digitar el email y contraseña anteriormente creados, 
+si el acceso es exitoso, el usuario vera la interfaz de menu principal y podra comenzar a hacer uso de la app
 ```
 
 # Nomenclatura
