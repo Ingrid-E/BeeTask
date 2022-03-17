@@ -28,9 +28,7 @@ Al hacer npm start en la carpeta api se inicia un servidor en el puerto 5000 y e
 
 # Comenzar 👩🏼‍🌾🐝(Entorno de producción)👨🏼‍🌾🐝
 1. Ingresar al link de la app
-```
-"link heroku"
-```
+
 2. Crear una cuenta
 ```
 Ingresar los datos que se piden:
