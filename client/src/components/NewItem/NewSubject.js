@@ -15,6 +15,8 @@ function NewSubject(props){
         id: 0
     });
 
+    const [error,setError] = useState({name: false, description: false})
+
       useEffect(()=>{
 
         },[subject])
@@ -25,8 +27,24 @@ function NewSubject(props){
     };
 
     const createSubject = async (e)=>{
-        e.preventDefault();
-        try{
+      e.preventDefault();
+      const emptyName = subject.description.length === 0 || !subject.description.trim()
+      const emptyDescription = subject.subjectName.length === 0 || !subject.subjectName.trim()
+
+      if(emptyName || emptyDescription){
+        if(emptyName && emptyDescription){
+          subject.subjectName = null
+          subject.description = null
+          setError({name:true, description: true})
+        }else if(emptyName){
+          subject.subjectName = null
+          setError({name: true, description: false})
+        }else{
+          subject.description = null
+          setError({name: false, description: true})
+        }
+      }else{
+          try{
             const res = await fetch("http://localhost:5000/addSubject",{
                 method: "POST",
                 body: JSON.stringify(subject),
@@ -37,6 +55,7 @@ function NewSubject(props){
         }catch(error){
             console.error("Error al crear la materia")
         }
+      }
     }
 
     return (
@@ -49,13 +68,15 @@ function NewSubject(props){
             <img src={Bee} alt="Bee"></img>
         </div>
         <div>
-          <h2>Titulo</h2>
+          <h2>Nombre</h2>
         <TextField
             value={subject.subjectName}
             variant="outlined"
             onChange={handleSubject}
             size="small"
             name="subjectName"
+            error = {error.name}
+            helperText = {error.name? "Ingresa el Nombre": null}
             fullWidth
           />
         </div>
@@ -67,6 +88,8 @@ function NewSubject(props){
             onChange={handleSubject}
             size="small"
             name="description"
+            error = {error.description}
+            helperText = {error.description? "Ingresa una descripcion": null}
             fullWidth
           />
           </div>

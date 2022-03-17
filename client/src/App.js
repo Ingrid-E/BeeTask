@@ -9,7 +9,7 @@ import SubjectsState from "./context/Subjects/SubjectsState"
 import TaskForm from "./components/TaskForm";
 import EditSection from "./components/EditSection";
 import TaskDetails from "./components/TaskDetails";
-import Courses from "./components/Courses/Courses";
+
 function App(){
 
     return(
@@ -20,14 +20,12 @@ function App(){
           <Route path='/register'element={<Register/>} />
           <Route path='/login'element={<Login/>} />
           <Route path='/menu'element={<Dashboard/>} />
-          <Route path='/menu/courses'element={<Courses/>} />
           <Route path='/task/:userid/:idSUBJECT/:taskid'element={<TaskForm/>} />
           <Route path='/section/:userid/:idSUBJECT/:sectionId'element={<EditSection/>} />
           <Route path='/sections/:userid/:idSUBJECT' element={<SubjectsState>
             <Sections/>
             </SubjectsState>} />
           <Route path='/taskDetails/:userid/:idSUBJECT/:taskid' element={<TaskDetails/>}/>
-
         </Routes>
       </Router>
       </div>

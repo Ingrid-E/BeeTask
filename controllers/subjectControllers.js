@@ -53,14 +53,14 @@ const seeSubjects = async(req, res, next)=>{
 
 const seeOneSubject = async(req, res, next)=>{
     try {
-    const {idSUBJECT} = req.body;
-    const response = await pool.query("SELECT subjectname, description FROM subject WHERE idsubject = $1;", [idSUBJECT]);
+    const {idsubject} = req.params;
+    const response = await pool.query("SELECT * FROM subject WHERE idsubject = $1;", [idsubject]);
     if(response.rowCount === 0){
         res.status(404).json({message:`the idsubject: ${idsubject} not exists`});
     }
     res.status(200).json(response.rows[0]);
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 

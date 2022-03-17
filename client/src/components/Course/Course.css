@@ -1,0 +1,9 @@
+@import url('../components.css');
+
+.course .title{
+    background-color: red;
+}
+
+.course .tasks_container {
+    
+}

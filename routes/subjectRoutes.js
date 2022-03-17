@@ -8,6 +8,6 @@ app.post("/countSubjects", countSubjects);
 app.delete("/deleteSubject/:idsubject", deleteSubject );
 app.put("/editSubject", editSubject);
 app.get("/seeSubjects/:userid", seeSubjects );
-app.get("/seeOneSubject", seeOneSubject);
+app.get("/seeOneSubject/:idsubject", seeOneSubject);
 
 module.exports = app;

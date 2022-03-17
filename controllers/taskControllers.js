@@ -52,18 +52,27 @@ const editOneTask = async(req, res, next)=>{
     await pool.query("UPDATE TASK SET name = $1, description = $2, grade = $3, datetime = $4 WHERE idtask = $5;", [name, description, grade, datetime, idTask]);
     res.status(200).json("subject edited");
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 
 const seeTasks = async(req, res, next)=>{
     try {
-        console.log("pasa por tareas")
-    const {idSECTION} = req.params;
-    const response = await pool.query("SELECT idtask, name, grade FROM TASK WHERE idSECTION = $1;", [idSECTION]);
+    const {idsection} = req.params;
+    const response = await pool.query("SELECT * FROM TASK WHERE idsection = $1;", [idsection]);
     res.status(200).json(response.rows);
     } catch (error) {
-     next(error);   
+     next(error);
+    }
+}
+
+const subjectTasks = async(req, res, next)=>{
+    try {
+    const {idsection} = req.params;
+    const response = await pool.query("SELECT * FROM TASK WHERE idsection = $1;", [idsection]);
+    res.status(200).json(response.rows);
+    } catch (error) {
+     next(error);
     }
 }
 
