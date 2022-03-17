@@ -1,28 +1,27 @@
-@import url('../components.css');
-.course {
+.course_information {
     display: flex;
     flex-direction: column;
 }
 
-.course .content {
+.course_information .content {
     display: flex;
     flex-direction: row;
     column-gap: 10vw;
 }
 
-.course .title{
+.course_information .title{
     margin: 2vh 0;
 }
 
-.course .title h1 {
+.course_information .title h1 {
     margin-bottom: 1.5vh;
 }
 
-.course .title p {
+.course_information .title p {
     font-weight: 600;
 }
 
-.course .container {
+.course_information .container {
     display: flex;
     flex-direction: column;
     background-color: #B7E8D5;
@@ -31,24 +30,24 @@
     border-radius: 10px;
 }
 
-.course .container h1 {
+.course_information .container h1 {
     font-size: 2rem;
     align-self: center;
     margin: 2vh 0;
 }
 
-.course .container div {
+.course_information .container div {
     background-color: white;
     width: 40vw;
     height: 60vh;
     border-radius: 10px;
 }
 
-.course .container button {
-    
+.course_information .container button {
+
 }
 
-.course .section_container {
+.course_information .section_container {
     width: 20vw;
     background-color: #CFDFEB;
 }

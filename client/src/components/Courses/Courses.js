@@ -5,6 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import NewSubject from "../NewItem/NewSubject";
 import "./Courses.css";
 import Course from "../Course/Course";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Courses({ userid }) {
     console.log("azucar:", userid)
@@ -72,7 +73,7 @@ function Courses({ userid }) {
                 </div>
             ):((
                 <div>
-                    <Button> Hola</Button>
+                     <Button startIcon={<ArrowBackIcon/>}>Volver</Button>
                      <Course idSubject= {subject.idSubject} goBack={handleChange}/>
                 </div>
             ))}

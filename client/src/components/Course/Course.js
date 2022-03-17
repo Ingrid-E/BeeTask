@@ -30,7 +30,7 @@ function Course(props, {idSubject}) {
     }
 
     return (
-        <div className="course">
+        <div className="course_information">
                 <div className="title">
                     <h1>{subject.subjectname}</h1>
                     <p>{subject.description}</p>

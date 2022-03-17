@@ -18,7 +18,7 @@ function MenuNav(props) {
             </div>
             <div onClick={()=>{handleClick("Courses")}}>
             <Folder/>
-            <h1>Materias</h1>
+            <h1>Cursos</h1>
             </div>
             <div onClick={()=>{handleClick("Calculator")}}>
             <Calculator/>
