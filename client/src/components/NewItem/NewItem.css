@@ -51,16 +51,53 @@
     background-color:  #fde18b!important;
 }
 
+/* */
+.newItem .form_button {
+    background-color: #FEE69F;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    align-self: center;
+    width: 10em;
+    margin-top: 1.5vh;
+    margin-left: 8.2vw;
+}
+
+.newItem .form_button:hover {
+    background-color:  #fde18b;
+    transform: scale(1.01);
+}
+
+.newItem .form_button:focus {
+    background-color:  #fde18b!important;
+}
+
+
+/* Creacion cursos */
+
+.newSubject .subjectForm{
+    visibility: hidden;
+    display: none;
+}
+
+
 /*CSS especial para agregar secciones*/
+
+.newSection .title {
+    margin-bottom: 20px;
+}
 
 .newSection form .addSection{
     display: flex;
     flex-direction: row;
-    row-gap: 10px;
+    column-gap: 20px;
+    width: fit-content;
+    align-self: center;
+
 }
 
 .newSection form .addSection .nameField{
-    width: 5vw;
+    width: 15vw;
 }
 
 
@@ -68,4 +105,19 @@
     width: 3.8vw;
 }
 
+.newSection .section {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.newSection .section h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.newSection .deleteSection {
+    width: fit-content!important;
+    padding: 0;
+}
 

@@ -4,9 +4,10 @@ const addSubject = async(req, res, next)=>{
     try {
     const {subjectName, description, userid} = req.body;
     await pool.query("INSERT INTO SUBJECT (subjectName, description, userid) VALUES ($1, $2, $3);", [subjectName, description, userid]);
-    res.status(200).json("subject created");
+    const response = await pool.query("SELECT idsubject FROM subject WHERE subjectName = $1 AND description = $2", [subjectName, description]);
+    res.status(200).json(response.rows[0]);
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 
@@ -16,7 +17,7 @@ const deleteSubject = async(req, res, next)=>{
     await pool.query("DELETE FROM SUBJECT WHERE idsubject = $1;", [idsubject]);
     res.status(200).json("subject deleted");
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 
@@ -26,7 +27,7 @@ const editSubject = async(req, res, next)=>{
     await pool.query("UPDATE subject SET subjectname= $1, description=$2 WHERE idsubject = $3 AND userid = $4;", [subjectname, description, idsubject, userid]);
     res.status(200).json("subject edited");
     } catch (error) {
-     next(error);   
+     next(error);
     }
 }
 

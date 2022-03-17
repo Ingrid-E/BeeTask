@@ -22,7 +22,7 @@ function Sections(){
         subjectsContext.getSections(idSUBJECT);
         },[ponderado])
 
-        
+
         const handleChange = async (e) =>{
             setPonderado({...ponderado, [e.target.name]:e.target.value} )
         };
@@ -39,16 +39,15 @@ function Sections(){
                         "Content-Type": "application/json"
                     },                })
                 const dataresponse = await response.json();
-                console.log(dataresponse);
             } catch (error) {
                 console.log(error)
             }
         }
-    
+
         loadTask();
 
     return (
-     
+
      <>
         <h1>Crear una nueva seccion</h1>
         <NewSection idSUBJECT={idSUBJECT}/>
@@ -57,7 +56,7 @@ function Sections(){
         {
         subjectsContext.sections.length > 0
             ? subjectsContext.sections.map((aSection)=>(
-                
+
                <div key={`${aSection.idsection}`}>
                <h2>{aSection.sectionname} {aSection.gradepercentage}%</h2>
                 <button onClick={() => navigate(`/section/${userid}/${idSUBJECT}/${aSection.idsection}`)}>editar</button>
@@ -67,7 +66,7 @@ function Sections(){
 
                </div>
 
-                
+
             )
             )
         : (<h1>Aun no tienes secciones, prueba a crear una.</h1>)
@@ -75,7 +74,7 @@ function Sections(){
         }
 
         <h2>Nota parcial: {ponderado}</h2>
-        
+
         <button onClick={handleButton}>Volver al menu</button>
 
         </>

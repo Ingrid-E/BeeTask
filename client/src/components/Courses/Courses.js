@@ -10,7 +10,7 @@ function Courses({ userid }) {
     const [subjects, setSubjects] = useState([]);
 
     useEffect(() => {
-        getSubjects(userid);
+        getSubjects();
     }, [state])
 
     const getSubjects = async () => {
@@ -60,7 +60,6 @@ function Courses({ userid }) {
             {
                 state ? <NewSubject className="newSubject" userid={userid} window={handleChange} /> : null
             }
-
         </div>
     )
 }

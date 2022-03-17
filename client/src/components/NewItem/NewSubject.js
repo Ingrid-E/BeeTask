@@ -3,7 +3,7 @@ import './NewItem.css'
 import Bee from '../../assets/Images/Bee.png'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-
+import NewSection from './NewSection';
 function NewSubject(props){
     const userid = props.userid;
     console.log("id del usuario: ",userid);
@@ -11,7 +11,10 @@ function NewSubject(props){
         subjectName: '',
         description: '',
         userid: userid,
+        status: false,
+        id: 0
     });
+
       useEffect(()=>{
 
         },[subject])
@@ -23,28 +26,23 @@ function NewSubject(props){
 
     const createSubject = async (e)=>{
         e.preventDefault();
-
+        try{
             const res = await fetch("http://localhost:5000/addSubject",{
-            method: "POST",
-            body: JSON.stringify(subject),
-            headers: {"Content-Type": "application/json"}
-        });
-        const resData = await res.json();
-        console.log(resData);
-        if(!res.ok){ 
-            console.log("hubo un error al crear la materia")
-        }else{
-
-            console.log("materia creada: ", subject);
-
+                method: "POST",
+                body: JSON.stringify(subject),
+                headers: {"Content-Type": "application/json"}
+                });
+            const resData = await res.json();
+            setSubject({...subject, status: true, id: resData.idsubject})
+        }catch(error){
+            console.error("Error al crear la materia")
         }
-
     }
 
     return (
 
      <div className='newItem newSubject'>
-        <form onSubmit={createSubject}>
+        <form onSubmit={createSubject} className={subject.status? "subjectForm": ""}>
         <div className='title'>
             <img src={Bee} alt="Bee"></img>
             <h1>Nuevo Curso</h1>
@@ -75,7 +73,10 @@ function NewSubject(props){
         <Button type='submit'>Crear Curso</Button>
         <Button onClick={()=>{props.window("closed")}}>Cancelar</Button>
         </form>
-
+        {subject.status? (<div>
+        <NewSection idsubject={subject.id}/>
+        <Button className="form_button"onClick={()=>{props.window("closed")}}>Terminar</Button>
+        </div>): null}
         </div>
 
 
