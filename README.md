@@ -28,6 +28,7 @@ Al hacer npm start en la carpeta api se inicia un servidor en el puerto 5000 y e
 
 # Comenzar 👩🏼‍🌾🐝(Entorno de producción)👨🏼‍🌾🐝
 1. Ingresar al link de la app
+https://beetask.herokuapp.com/
 
 2. Crear una cuenta
 ```
@@ -39,12 +40,6 @@ Ingresar los datos que se piden:
 - Contraseña
 
 Restricciones: la contraseña debe tener al menos 8 caracteres, una mayuscula y un caracter especial (#,$,%,&,?,*,/)
-```
-
-3. Acceder a la app y hacer uso de sus funcionalidades
-```
-Para acceder a la app solo es necesario digitar el email y contraseña anteriormente creados, si el acceso es exitoso, 
-el usuario vera la pantalla de inicio y podra comenzar a hacer uso de la app
 ```
 
 # Nomenclatura
