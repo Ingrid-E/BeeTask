@@ -76,6 +76,5 @@ KIOasjkdg
 
 # Información de la app 🌷🐝
 ## 1. ¿Que es beetask?
-```
-Facil
-```
+
+Una aplicación web que permite tener varias herramientas de organización en una sola plataforma, fácil de encontrar y usar.
