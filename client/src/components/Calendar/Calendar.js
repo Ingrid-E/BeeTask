@@ -1,4 +1,5 @@
 import DatePicker from 'sassy-datepicker';
+import "./Calendar.css";
 
 function Example() {
   const onChange = (date) => {

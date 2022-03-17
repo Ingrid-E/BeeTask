@@ -19,7 +19,7 @@ function Dashboard() {
             />
             <div className="dashboard__content">
                 {section === "Home"? (
-                    <HomeDash/>
+                    <HomeDash userid={userid}/>
                 ):(section === "Courses"? (
                     <Courses userid={userid}/>
                 ): (
