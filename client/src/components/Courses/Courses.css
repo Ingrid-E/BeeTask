@@ -2,14 +2,99 @@
 
 .courses {
     display: flex;
-    background-color: green;
+    flex-direction: column;
     width: calc(100vw - 10rem);
     justify-content: center;
+    align-items: center;
     height: 100%;
 }
 
 .courses_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #F0CAC7;
-    width:  50vw;
-    height: 10vh;
+    width:  75vw;
+    min-height: 40vh;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.courses_container h1 {
+    font-size: 2.5rem;
+    margin: 1vh 1vw;
+}
+.courses_container .show_courses {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3vw;
+    row-gap: 1.5vh;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-width: 60vw;
+    align-self: center;
+}
+
+.courses_container .course {
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    width: 10vw;
+    padding: 1vh 1vw;
+}
+
+.courses_container .course h1 {
+    font-size: 1.5rem;
+}
+
+.courses_container .hexagon {
+    background: #FFCE70;
+    width: 3.5vh;
+    height: 4vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+}
+
+.courses_container button {
+    background-color: white;
+    align-self: center;
+    border-radius: 10px;
+    padding: 0.2em 1.5em;
+    margin: 2vh 0;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 100ms;
+}
+
+.courses_container button:hover {
+    background-color: rgb(245, 245, 245);
+    transform: scale(1.02);
+}
+
+.courses_container button:focus {
+    background-color:  rgb(245, 245, 245)!important;
+}
+
+.courses_container button svg {
+    transform: scale(1.5);
+}
+
+
+
+.block::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: inherit;
+    height: inherit;
+    pointer-events: none;
+}
+
+.newSubject {
+    position: absolute;
 }

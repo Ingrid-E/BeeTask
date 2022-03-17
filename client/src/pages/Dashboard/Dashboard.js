@@ -21,7 +21,7 @@ function Dashboard() {
                 {section === "Home"? (
                     <HomeDash/>
                 ):(section === "Courses"? (
-                    <Courses/>
+                    <Courses userid={userid}/>
                 ): (
                     <div>
                         <h1>Calculadora</h1>

@@ -5,7 +5,8 @@ function SeeSubjects(props){
     const navigate = useNavigate();
 
     const subjectsContext = useContext(SubjectsContext);
-    
+    console.log("Subject Context", subjectsContext)
+
     const userid = props.userid;
 
 
@@ -15,7 +16,6 @@ function SeeSubjects(props){
 
         },[])
 
-   
 
         const handleNavigate = (idsubject) =>{
             navigate("/sections/"+userid+"/"+idsubject)
@@ -35,7 +35,6 @@ function SeeSubjects(props){
           }
       }
     return (
-     
      <>
         <h1>Mis cursos</h1>
         {
@@ -47,13 +46,10 @@ function SeeSubjects(props){
                 <button onClick={() => deleteSubject(aSubject.idsubject)}>Eliminar</button>
 
                 </div>
-       
-                
             )
             )
           : (<h1>No tienes cursos aun, prueba a crear uno</h1>)
-        }        
-        
+        }
         </>
 
 

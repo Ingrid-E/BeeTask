@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext  } from 'react';
-import SubjectsContext from '../context/Subjects/SubjectsContext';
-
+import SubjectsContext from '../../context/Subjects/SubjectsContext'
 
 function NewTask(props){
     const userid = props.userid;

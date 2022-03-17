@@ -17,6 +17,9 @@
     align-items: center;
 }
 
+.MenuNav div:first-child{
+    margin-top: 10vh;
+}
 
 .MenuNav div svg {
     width: 3rem;
