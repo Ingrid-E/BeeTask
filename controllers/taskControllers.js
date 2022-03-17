@@ -12,6 +12,7 @@ const addTask = async(req, res, next)=>{
 
 const countTasks = async(req, res, next)=>{
     try {
+    console.log("User id del usuario", req.body)
     const {userid} = req.body;
     const response = await pool.query("SELECT COUNT(idtask) AS tasksCounted FROM TASK t JOIN SECTION s ON t.idsection = s.idsection JOIN SUBJECT sub ON s.idsubject = sub.idsubject and sub.userid = $1;", [userid]);
     res.status(200).json(response.rows[0]);

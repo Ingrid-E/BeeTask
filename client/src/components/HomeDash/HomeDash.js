@@ -5,12 +5,17 @@ import ImageHexagons from "../../assets/Images/Hexagons-dashboard.png";
 import ImageHexagon from "../../assets/Images/Hexagon-Courses.png";
 import Calendar from "../Calendar/Calendar";
 import "./HomeDash.css";
+import { post } from "../../hooks/Hooks";
 
 function HomeDash({ userid }) {
   const [subjects, setSubjects] = useState([]);
+  const [taskCount, setTaskCount] = useState(0);
+  const [subjectCount, setSubjectCount] = useState(0);
 
   useEffect(() => {
     getSubjects();
+    countTasks();
+    countSubjects();
   }, []);
 
   const getSubjects = async () => {
@@ -23,6 +28,25 @@ function HomeDash({ userid }) {
       console.error(error);
     }
   };
+
+  const countTasks = async () => {
+    try {
+      const response = await (await post("countTasks/", {'userid': userid})).json();
+      setTaskCount(response.taskscounted);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const countSubjects = async () => {
+    try {
+      const response = await (await post("countSubjects/", {'userid': userid})).json();
+      setSubjectCount(response.subjectscounted);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   return (
     <div className="dashboard__home">
@@ -44,7 +68,7 @@ function HomeDash({ userid }) {
           <div className="dashboard__home-container-body-items">
             <div className="dashboard__home-container-body-counters">
               <div className="dashboard__home-container-body-counters-tasks counter">
-                <h1>8</h1>
+                <h1>{taskCount}</h1>
                 <h2>Tareas Pendientes</h2>
                 <img
                   className="hexagons-background"
@@ -53,7 +77,7 @@ function HomeDash({ userid }) {
                 ></img>
               </div>
               <div className="dashboard__home-container-body-counters-courses counter">
-                <h1>6</h1>
+                <h1>{subjectCount}</h1>
                 <h2>Cursos Matriculados</h2>
                 <img
                   className="hexagons-background"

@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React, useState, useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import HomeDash from "../../components/HomeDash/HomeDash";
@@ -8,14 +8,23 @@ import Courses from "../../components/Courses/Courses";
 function Dashboard() {
     const {userid} = useLocation().state;
     const [section, setSection] = useState("Home")
+    let reload = false;
     const handleChange = (value) => {
         setSection(value)
     };
+
+    const reloadPage = ()=>{
+        setSection(section)
+    };
+
+    useEffect(() => {
+    }, [section])
 
     return (
         <div className="dashboard">
             <MenuNav
             nav = {handleChange}
+            onClick = {reloadPage}
             />
             <div className="dashboard__content">
                 {section === "Home"? (

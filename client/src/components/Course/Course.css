@@ -1,18 +1,54 @@
 @import url('../components.css');
+.course {
+    display: flex;
+    flex-direction: column;
+}
+
+.course .content {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10vw;
+}
 
 .course .title{
-    background-color: red;
+    margin: 2vh 0;
 }
 
-.course .task_component {
+.course .title h1 {
+    margin-bottom: 1.5vh;
+}
+
+.course .title p {
+    font-weight: 600;
+}
+
+.course .container {
+    display: flex;
+    flex-direction: column;
     background-color: #B7E8D5;
-    padding: 1vh 1vw;
+    padding:0 2vw;
+    padding-bottom: 8vh;
+    border-radius: 10px;
 }
 
-.course .task_component h1 {
-    font-size: 1.5rem;
+.course .container h1 {
+    font-size: 2rem;
+    align-self: center;
+    margin: 2vh 0;
 }
 
-.task_component .task_container {
+.course .container div {
     background-color: white;
+    width: 40vw;
+    height: 60vh;
+    border-radius: 10px;
+}
+
+.course .container button {
+    
+}
+
+.course .section_container {
+    width: 20vw;
+    background-color: #CFDFEB;
 }

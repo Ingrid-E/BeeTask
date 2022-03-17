@@ -32,6 +32,7 @@ function Courses({ userid }) {
     };
 
     const handleChange = (value) => {
+        console.log(value);
         if (value === "closed") {
             setState(false)
         }
@@ -69,7 +70,12 @@ function Courses({ userid }) {
                 </div>
                        {state ? <NewSubject className="newSubject" userid={userid} window={handleChange} /> : null}
                 </div>
-            ):(<Course idSubject= {subject.idSubject}></Course>)}
+            ):((
+                <div>
+                    <Button> Hola</Button>
+                     <Course idSubject= {subject.idSubject} goBack={handleChange}/>
+                </div>
+            ))}
 
 
         </div>
