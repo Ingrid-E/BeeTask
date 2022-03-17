@@ -80,11 +80,14 @@ KIOasjkdg
 Una aplicación web que permite tener varias herramientas de organización en una sola plataforma, fácil de encontrar y usar.
 
 ## 2. Herramientas:
-- Crear un horario 
-- Calculadora de notas
-- Lista de tareas
-- Timer pomodoro
-- Calendario
-- Cuadernillo de notas
-- Login
-- Register
+- Crear un horario 🌞🌚
+- Calculadora de notas ➕➖✖️➗
+- Lista de tareas 📜📚
+- Timer pomodoro 🍅🕣
+- Calendario 📅📆
+- Cuadernillo de notas 📔📝
+- Login ✅❌
+- Register 📨
+
+## 3. Pantalla de inicio:
+En ella se vera toda la información importante como tareas pendientes, notas de materias, etc... 
