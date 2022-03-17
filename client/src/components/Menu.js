@@ -5,7 +5,10 @@ import { useLocation } from "react-router-dom"
 import SeeSubjects from './SeeSubjects';
 import SubjectsState from '../context/Subjects/SubjectsState';
 function Menu() {
+    console.log("paso por aqui");
     const {userid} = useLocation().state;
+    console.log("paso por aqui");
+
     return (
         <>
             <h1>Menu</h1>

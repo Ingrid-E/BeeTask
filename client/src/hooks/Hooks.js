@@ -31,7 +31,7 @@ export async function post(endpoint, data) {
     err.response = response;
     throw err;
   } else {
-      return await response;
+      return await response.json();
   }
 }
 

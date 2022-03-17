@@ -10,6 +10,16 @@ const addSubject = async(req, res, next)=>{
     }
 }
 
+const countSubjects = async(req, res, next)=>{
+    try {
+    const {userid} = req.body;
+    const response = await pool.query("SELECT COUNT(idsubject) AS subjectsCounted FROM subject WHERE userid = $1;", [userid]);
+    res.status(200).json(response.rows[0]);
+    } catch (error) {
+     next(error);
+    }
+}
+
 const deleteSubject = async(req, res, next)=>{
     try {
     const {idsubject} = req.params;
@@ -55,4 +65,4 @@ const seeOneSubject = async(req, res, next)=>{
 }
 
 
-module.exports = {addSubject, deleteSubject, editSubject, seeOneSubject, seeSubjects};
+module.exports = {addSubject, deleteSubject, editSubject, seeOneSubject, seeSubjects, countSubjects};
