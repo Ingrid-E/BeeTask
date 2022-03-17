@@ -10,7 +10,7 @@ function HomeDash({ userid }) {
 
   useEffect(() => {
     getSubjects();
-  }, [subjects]);
+  }, []);
 
   const getSubjects = async () => {
     try {
