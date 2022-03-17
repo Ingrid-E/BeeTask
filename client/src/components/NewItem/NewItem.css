@@ -1,0 +1,71 @@
+@import url('../components.css');
+
+.newItem {
+    width: 25vw;
+    height: fit-content;
+    padding: 6vh 1vw;
+    background-image: url(../../assets/Images/hexagon_group.png);
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    background-position: 9vw 60%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.newItem form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
+
+.newItem .title {
+    display: flex;
+    align-self: center;
+}
+
+.newItem .title img {
+    width: 2vw;
+    margin: 0 1vw;
+}
+
+.newItem .title img:first-child {
+    transform: scaleX(-1);
+}
+
+.newItem form button {
+    background-color: #FEE69F;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    align-self: center;
+    width: 10em;
+}
+
+.newItem form button:hover {
+    background-color:  #fde18b;
+    transform: scale(1.01);
+}
+
+.newItem form button:focus {
+    background-color:  #fde18b!important;
+}
+
+/*CSS especial para agregar secciones*/
+
+.newSection form .addSection{
+    display: flex;
+    flex-direction: row;
+    row-gap: 10px;
+}
+
+.newSection form .addSection .nameField{
+    width: 5vw;
+}
+
+
+.newSection form .addSection .percantageField{
+    width: 3.8vw;
+}
+
+

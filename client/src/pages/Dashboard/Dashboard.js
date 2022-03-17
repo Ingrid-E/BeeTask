@@ -22,7 +22,7 @@ function Dashboard() {
                         <h1>Pagina de Inicio</h1>
                         </div>
                 ):(section === "Courses"? (
-                    <Courses/>
+                    <Courses userid={userid}/>
                 ): (
                     <div>
                         <h1>Calculadora</h1>

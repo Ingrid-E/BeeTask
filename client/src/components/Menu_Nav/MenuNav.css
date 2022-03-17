@@ -5,9 +5,8 @@
     flex-direction: column;
     background-color: #FEE69F;
     width: 10rem;
-    height: 86vh;
+    height: 100vh;
     row-gap: 30px;
-    padding-top: 7vh;
 }
 
 .MenuNav div {
@@ -16,6 +15,9 @@
     align-items: center;
 }
 
+.MenuNav div:first-child{
+    margin-top: 10vh;
+}
 
 .MenuNav div svg {
     width: 3rem;

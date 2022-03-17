@@ -2,8 +2,7 @@ import React, { useEffect, useContext, useState, Fragment  } from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import Tasks from './Tasks';
 import SubjectsContext from '../context/Subjects/SubjectsContext';
-import NewSection from './NewSection'
-
+import NewSection from './NewItem/NewSection';
 
 function Sections(){
     let [ponderado, setPonderado] = useState(0);
