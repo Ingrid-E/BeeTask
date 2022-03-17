@@ -28,7 +28,9 @@ Al hacer npm start en la carpeta api se inicia un servidor en el puerto 5000 y e
 
 # Comenzar 👩🏼‍🌾🐝(Entorno de producción)👨🏼‍🌾🐝
 1. Ingresar al link de la app
+```
 https://beetask.herokuapp.com/
+```
 
 2. Crear una cuenta
 ```
