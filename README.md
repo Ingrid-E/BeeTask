@@ -91,3 +91,9 @@ Una aplicación web que permite tener varias herramientas de organización en un
 
 ## 3. Pantalla de inicio:
 En ella se vera toda la información importante como tareas pendientes, notas de materias, etc... 
+
+### Integrantes:
+- Ingrid Echeverry Montoya 🙎🏻👾 (Scrum master y Frontend) 
+- Andres David Arcos 👨‍🦱👨🏽‍💻 (Backend)
+- Jean Pierre Cardenas Perea 👨🏽‍🦱🐝 (Frontend)
+- Jhan Alejandro Perez 😼👾 (Backend y Tester)
