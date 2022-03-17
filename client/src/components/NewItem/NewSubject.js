@@ -78,10 +78,7 @@ function NewSubject(props){
         <Button className="form_button"onClick={()=>{props.window("closed")}}>Terminar</Button>
         </div>): null}
         </div>
-
-
     )
-
 }
 
 export default NewSubject;

@@ -1,8 +1,9 @@
 import {React, useState} from "react";
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import "./Dashboard.css";
+import HomeDash from "../../components/HomeDash/HomeDash";
 import MenuNav from "../../components/Menu_Nav/MenuNav";
-import Courses from "../../components/Courses/Courses"
+import Courses from "../../components/Courses/Courses";
 
 function Dashboard() {
     const {userid} = useLocation().state;
@@ -16,11 +17,9 @@ function Dashboard() {
             <MenuNav
             nav = {handleChange}
             />
-            <div className="dashboard_content">
+            <div className="dashboard__content">
                 {section === "Home"? (
-                    <div>
-                        <h1>Pagina de Inicio</h1>
-                        </div>
+                    <HomeDash userid={userid}/>
                 ):(section === "Courses"? (
                     <Courses userid={userid}/>
                 ): (

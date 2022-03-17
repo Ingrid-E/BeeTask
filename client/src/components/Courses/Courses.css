@@ -38,24 +38,30 @@
 .courses_container .course {
     background-color: white;
     display: flex;
+    justify-content: space-between;
     border-radius: 10px;
-    width: 10vw;
+    width: 15vw;
+    height: fit-content;
     padding: 1vh 1vw;
 }
 
 .courses_container .course h1 {
     font-size: 1.5rem;
+    align-self: flex-end;
+    text-align: right;
+    width: fit-content;
 }
 
 .courses_container .hexagon {
     background: #FFCE70;
-    width: 3.5vh;
+    min-width: 3.5vh;
     height: 4vh;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .5s all;
+    align-self: center;
 }
 
 .courses_container button {
