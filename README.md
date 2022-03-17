@@ -32,16 +32,16 @@ Al hacer npm start en la carpeta api se inicia un servidor en el puerto 5000 y e
 link de la app: "link heroku"
 ```
 2. Crear una cuenta
-```
-Ingresar los datos que se piden:
 
-* Email
-* Nombres
-* Apellidos
-* Contraseña
+## Ingresar los datos que se piden:
 
-Restricciones: la contraseña debe tener al menos 8 caracteres, una mayuscula y un caracter especial (#,$,%,&,?,*,/)
-```
+- Email
+- Nombres
+- Apellidos
+- Contraseña
+
+## Restricciones: la contraseña debe tener al menos 8 caracteres, una mayuscula y un caracter especial (#,$,%,&,?,*,/)
+
 
 3. Acceder a la app y hacer uso de sus funcionalidades
 ```
