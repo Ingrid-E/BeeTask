@@ -5,18 +5,30 @@ import ImageHexagons from "../../assets/Images/Hexagons-dashboard.png";
 import ImageHexagon from "../../assets/Images/Hexagon-Courses.png";
 import Calendar from "../Calendar/Calendar";
 import "./HomeDash.css";
-import { post } from "../../hooks/Hooks";
+import { post,get } from "../../hooks/Hooks";
 
 function HomeDash({ userid }) {
   const [subjects, setSubjects] = useState([]);
   const [taskCount, setTaskCount] = useState(0);
   const [subjectCount, setSubjectCount] = useState(0);
+  const [tasks, setTasks] = useState([])
 
   useEffect(() => {
     getSubjects();
+    getTasks();
     countTasks();
     countSubjects();
   }, []);
+
+  const getTasks = async () => {
+    try {
+        const response = await get(`getUserTasks/${userid}`);
+        console.log("Tareas: ", response);
+        setTasks(response);
+    } catch (error) {
+        console.error(error)
+    }
+}
 
   const getSubjects = async () => {
     try {
@@ -90,6 +102,19 @@ function HomeDash({ userid }) {
               <div className="dashboard__home-container-body-tasks-container">
                 <div className="dashboard__home-container-body-tasks-container-body">
                   <h1>Tareas</h1>
+                  {
+                        tasks.map((task) => (
+                            <div className="task_info">
+                                <div className="hexagon" style={task.priority ==='Urgente'? {background:'#F63131'} : (task.priority ==="Importante"? {background:'#FDC00F'}:{background:'#70E966'})}></div>
+                                <div className="task_text">
+                                <h3>{task.name}</h3>
+                                <p>{new Date(task.datetime).toLocaleString()}</p>
+                                </div>
+                            </div>
+                        )
+                        )
+
+                    }
                 </div>
               </div>
             </div>

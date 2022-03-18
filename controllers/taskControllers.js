@@ -80,6 +80,18 @@ const getSubjectTasks = async(req, res, next)=>{
     }
 }
 
+const getUserTasks = async(req, res, next)=>{
+    try {
+    const {userid} = req.params;
+    const response = await pool.query("SELECT * FROM TASK t JOIN SECTION s ON s.idsection = t.idsection JOIN SUBJECT sub ON s.idsubject = sub.idsubject AND sub.userid = $1 ORDER BY datetime asc;", [userid]);
+    console.log(response.rows)
+    res.status(200).json(response.rows);
+    } catch (error) {
+        console.log(error)
+     next(error);
+    }
+}
+
 
 const subjectTasks = async(req, res, next)=>{
     try {
@@ -106,4 +118,4 @@ const seeOneTask = async(req, res, next)=>{
 }
 
 
-module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, editOneTask, countTasks, getSubjectTasks};
+module.exports = {addTask, deleteTask, editTask, seeTasks, seeOneTask, editOneTask, countTasks, getSubjectTasks, getUserTasks};

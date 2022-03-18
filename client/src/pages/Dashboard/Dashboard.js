@@ -31,11 +31,7 @@ function Dashboard() {
                     <HomeDash userid={userid}/>
                 ):(section === "Courses"? (
                     <Courses userid={userid}/>
-                ): (
-                    <div>
-                        <h1>Calculadora</h1>
-                    </div>
-                ))}
+                ): null)}
             </div>
         </div>
     );

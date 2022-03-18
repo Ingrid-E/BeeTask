@@ -27,10 +27,6 @@ function MenuNav(props) {
                 <img className="img-blackboard" src={ImageBlackboard} alt="blackboard.png"></img>
                 <h1>Cursos</h1>
                 </div>
-                <div className="calculator-option option" onClick={()=>{handleClick("Calculator")}}>
-                <img className="img-calculator" src={ImageCalculator} alt="calculadora.png"></img>
-                <h1>Calculadora</h1>
-                </div>
             </div>
             <a className="logout-button" href="Home"><img className="img-dots" src={ImageDots} alt="dots-menu.png"></img></a>
         </div>
