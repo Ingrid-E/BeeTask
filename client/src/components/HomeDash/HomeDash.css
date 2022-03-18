@@ -11,6 +11,9 @@
 
 .dashboard__home-container{
     width: 100%;
+    /*background: url(../../assets/Images/Dashboard/courses-background5.jpg);
+    background-size: cover;
+    background-position: center;*/
 }
 
 .dashboard__home-container-header{

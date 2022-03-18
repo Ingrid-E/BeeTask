@@ -6,9 +6,38 @@
     background-color: #FEE69F;
     width: 10%;
     height: 100vh;
-    row-gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MenuNav .img-beetask {
+    width: 40%;
+    padding-top: 25px;
+}
+
+.MenuNav .option {
+    background: #FFFFFF;
+    width:8vw;
+    height: 9vw;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
     justify-content: center;
     align-items: center;
+    transition: .5s all;
+    align-self: center;
+}
+
+.MenuNav .option:hover {
+    transform: scale(1.1);
+}
+
+.MenuNav .logout-button{
+    width: 40%;
+}
+
+.MenuNav .img-dots {
+    width: 100%;
+    padding-bottom: 25px;
 }
 
 .MenuNav div {
@@ -17,13 +46,13 @@
     align-items: center;
 }
 
+.MenuNav .MenuNav-options {
+    row-gap: 15px;
+}
+
 .MenuNav div svg {
     width: 3rem;
     height: 3rem;
-}
-
-.MenuNav div *:hover {
-    color: red;
 }
 
 .MenuNav div img {
@@ -32,6 +61,6 @@
 
 .MenuNav div h1 {
     font-size: 1.3rem;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: 500;
 }
