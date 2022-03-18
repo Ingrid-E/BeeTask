@@ -111,12 +111,10 @@ function HomeDash({ userid }) {
                 <h1>Cursos</h1>
                 <div className="dashboard__home-container-body-courses-container-list">
                   {subjects.map((aSubject) => (
-                    <>
-                      <div className="course">
+                      <div className="course" >
                       <img className="hexagon-course" src={ImageHexagon} alt="hexagon-course.png"></img>
                         <h1>{aSubject.subjectname}</h1>
                       </div>
-                    </>
                   ))}
                 </div>
                 <img

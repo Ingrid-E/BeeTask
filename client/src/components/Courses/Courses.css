@@ -90,7 +90,30 @@
     transform: scale(1.5);
 }
 
+.newSubject {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.course_info_container button {
+    background-color: #FEE69F;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    align-self: center;
+    width: 10em;
+}
+
+.course_info_container button:hover {
+    background-color:  #fde18b;
+    transform: scale(1.01);
+}
+
+.course_info_container button:focus {
+    background-color:  #fde18b!important;
+}
 
 .block::before {
     content: '';
@@ -101,9 +124,3 @@
     pointer-events: none;
 }
 
-.newSubject {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}

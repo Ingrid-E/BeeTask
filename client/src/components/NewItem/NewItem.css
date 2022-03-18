@@ -121,3 +121,26 @@
     padding: 0;
 }
 
+
+/* Create task */
+
+.newTask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.newTask .date_input, .newTask .hour_input {
+    display: flex;
+    column-gap: 40px;
+}
+
+.newTask .select_priority label{
+    margin: 0 0.5vw;
+    font-size: 1rem;
+}
+
+.newTask .select_priority input{
+    margin-right: 3vw;
+}

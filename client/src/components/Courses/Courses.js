@@ -69,12 +69,14 @@ function Courses({ userid }) {
                         endIcon={<AddIcon />}
                         onClick={handleClick}>Nuevo Curso</Button>
                 </div>
-                       {state ? <NewSubject className="newSubject" userid={userid} window={handleChange} /> : null}
+                       {state ? <NewSubject className="newSubject" userid={userid} idsubject={null} window={handleChange} /> : null}
                 </div>
             ):((
-                <div>
-                     <Button startIcon={<ArrowBackIcon/>}>Volver</Button>
-                     <Course idSubject= {subject.idSubject} goBack={handleChange}/>
+                <div className="course_info_container">
+                     <Button
+                     startIcon={<ArrowBackIcon/>}
+                     onClick={()=>{showSubject({ visibility: false, idSubject: null })}}>Volver</Button>
+                     <Course idSubject= {subject.idSubject} />
                 </div>
             ))}
 

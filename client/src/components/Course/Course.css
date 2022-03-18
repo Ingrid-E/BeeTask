@@ -26,8 +26,8 @@
     flex-direction: column;
     background-color: #B7E8D5;
     padding:0 2vw;
-    padding-bottom: 8vh;
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .course_information .container h1 {
@@ -43,11 +43,80 @@
     border-radius: 10px;
 }
 
-.course_information .container button {
+.course_information .section_container div {
+    display: flex;
+    width: 10vw;
+    background-color: white;
+    height: auto;
+    border-radius: 10px;
+    align-self: center;
+    padding: 0.2vh 1vw;
+    margin: 2vh 0;
+    column-gap: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
 
+.course_information .section_container h1 {
+    font-size: 1.5rem;
+    margin: 2vh 0;
+}
+
+.course_information .container button {
+    background-color: #FEE69F;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    align-self: center;
+    width: 10em;
+    margin: 2vh 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.course_information .container button:hover {
+    background-color:  #fde18b;
+    transform: scale(1.01);
+}
+
+.course_information .container button:focus {
+    background-color:  #fde18b!important;
 }
 
 .course_information .section_container {
     width: 20vw;
     background-color: #CFDFEB;
+}
+
+.block::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: inherit;
+    height: inherit;
+    pointer-events: none;
+}
+
+.course_information .tasks_container .task_info {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    column-gap: 20px;
+    margin: 2vh 2vw;
+}
+
+.course_information .tasks_container .task_info  .task_text {
+    height: fit-content;
+    width: fit-content;
+}
+
+
+.course_information .tasks_container .hexagon {
+    background: #FFCE70;
+    max-width: 5vh;
+    height: 5.3vh;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75% , 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+    align-self: center;
 }

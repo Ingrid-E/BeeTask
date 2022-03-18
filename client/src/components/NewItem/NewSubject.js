@@ -6,14 +6,20 @@ import Button from '@material-ui/core/Button'
 import NewSection from './NewSection';
 function NewSubject(props){
     const userid = props.userid;
-    console.log("id del usuario: ",userid);
+    const idsubject = props.idsubject
     const [subject, setSubject] = useState({
-        subjectName: '',
-        description: '',
-        userid: userid,
-        status: false,
-        id: 0
-    });
+      subjectName: '',
+      description: '',
+      userid: userid,
+      status: false,
+      id: 0
+  });
+  console.log(idsubject)
+    if(idsubject!== null){
+      console.log("Subject already entered")
+      subject.id = idsubject
+      subject.status = true
+    }
 
     const [error,setError] = useState({name: false, description: false})
 
