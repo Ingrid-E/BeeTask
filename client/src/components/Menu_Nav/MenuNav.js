@@ -28,7 +28,7 @@ function MenuNav(props) {
                 <h1>Cursos</h1>
                 </div>
             </div>
-            <a className="logout-button" href="Home"><img className="img-dots" src={ImageDots} alt="dots-menu.png"></img></a>
+            <a className="logout-button" href="/"><img className="img-dots" src={ImageDots} alt="dots-menu.png"></img></a>
         </div>
     );
 }

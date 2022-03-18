@@ -128,9 +128,12 @@
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, .3);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-flow: column;
+}
+
+.dashboard__home-container-body-tasks-container-body h1{
+    width: 100%;
+    text-align: center;
 }
 
 .dashboard__home-container-body-items:nth-child(2){
